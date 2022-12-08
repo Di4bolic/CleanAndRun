@@ -676,7 +676,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2701247789dff244c8f9f48b615c9735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons: {fileID: 1964070627}
 --- !u!114 &302915013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,7 +688,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3b26cafcc34a3a4ab425e64143b4fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons: {fileID: 2119699624}
 --- !u!4 &302915014
 Transform:
   m_ObjectHideFlags: 0
@@ -926,9 +924,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 302915013}
-        m_TargetAssemblyTypeName: MusiqueClick, Assembly-CSharp
-        m_MethodName: MoveButtons
+      - m_Target: {fileID: 330172543}
+        m_TargetAssemblyTypeName: MusicIndex, Assembly-CSharp
+        m_MethodName: SelectIndex
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
