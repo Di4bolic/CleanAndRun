@@ -380,7 +380,7 @@ GameObject:
   m_Component:
   - component: {fileID: 633614174}
   m_Layer: 0
-  m_Name: Spawn2
+  m_Name: Spawn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -643,7 +643,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &773822862
 BoxCollider:
@@ -927,7 +927,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1173510129}
   m_Layer: 0
-  m_Name: Spawn3
+  m_Name: Spawn2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1069,7 +1069,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1474454773}
   - component: {fileID: 1474454772}
-  - component: {fileID: 1474454774}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1090,18 +1089,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicManager: {fileID: 1546816447}
-  obstacles:
+  obstacles0:
   - {fileID: 8545335587820762294, guid: a750116387a2a634c8979bde5cb53d26, type: 3}
   - {fileID: 8545335587820762294, guid: 42b3bb6f7c2d6c343ba11a918984e055, type: 3}
   - {fileID: 6690533662300113195, guid: 448d14947d2ab614791ff7b443eaab3d, type: 3}
   - {fileID: 6690533662300113195, guid: a93d04915b062db49b087323634c12c4, type: 3}
   - {fileID: 6690533662300113195, guid: fe98c8ed7318103499c1a93f198fca45, type: 3}
   - {fileID: 6690533662300113195, guid: 41d0c58cb452deb4ca0ad482538acb28, type: 3}
+  obstaclesGarbages0:
+  - {fileID: 8545335587820762294, guid: 1c89b6e68bf8b4a47ad9d989e3426926, type: 3}
+  - {fileID: 8545335587820762294, guid: 249a2281d00ce9a4b9fca9285a8efcba, type: 3}
+  - {fileID: 8545335587820762294, guid: 8418f714e386363458369c1d6848d6b0, type: 3}
+  - {fileID: 6690533662300113195, guid: f108735cd946a694eb5d10b0045dc874, type: 3}
+  - {fileID: 6690533662300113195, guid: 668e4a8dc8809c043ad604af5c9e0a7e, type: 3}
+  - {fileID: 6690533662300113195, guid: c6c7794af166b984abf840213c6b36e4, type: 3}
+  - {fileID: 6690533662300113195, guid: d797ef43c18b5cb479073567178c5713, type: 3}
+  obstacles1:
+  - {fileID: 8545335587820762294, guid: a750116387a2a634c8979bde5cb53d26, type: 3}
+  - {fileID: 8545335587820762294, guid: 42b3bb6f7c2d6c343ba11a918984e055, type: 3}
+  - {fileID: 6690533662300113195, guid: 448d14947d2ab614791ff7b443eaab3d, type: 3}
+  - {fileID: 6690533662300113195, guid: a93d04915b062db49b087323634c12c4, type: 3}
+  - {fileID: 6690533662300113195, guid: fe98c8ed7318103499c1a93f198fca45, type: 3}
+  - {fileID: 6690533662300113195, guid: 41d0c58cb452deb4ca0ad482538acb28, type: 3}
+  obstaclesGarbages1:
+  - {fileID: 8545335587820762294, guid: 1c89b6e68bf8b4a47ad9d989e3426926, type: 3}
+  - {fileID: 8545335587820762294, guid: 904192f0f19723145bdd5759e893bd5d, type: 3}
+  - {fileID: 8545335587820762294, guid: 249a2281d00ce9a4b9fca9285a8efcba, type: 3}
+  - {fileID: 8545335587820762294, guid: 8418f714e386363458369c1d6848d6b0, type: 3}
+  - {fileID: 6690533662300113195, guid: f108735cd946a694eb5d10b0045dc874, type: 3}
+  - {fileID: 6690533662300113195, guid: 404ccbad9f6955b479bfb6555377b72c, type: 3}
+  - {fileID: 6690533662300113195, guid: 668e4a8dc8809c043ad604af5c9e0a7e, type: 3}
+  - {fileID: 6690533662300113195, guid: 48bd3bbf90a516a46b46467810e7d951, type: 3}
+  - {fileID: 6690533662300113195, guid: c6c7794af166b984abf840213c6b36e4, type: 3}
+  - {fileID: 6690533662300113195, guid: 954b043c7bcd1314bb3cfe8ecd9b7e4b, type: 3}
+  - {fileID: 6690533662300113195, guid: d797ef43c18b5cb479073567178c5713, type: 3}
+  - {fileID: 6690533662300113195, guid: 673be4ac37b7cf14c9d54a0136b43307, type: 3}
+  obstacles2:
+  - {fileID: 8545335587820762294, guid: a750116387a2a634c8979bde5cb53d26, type: 3}
+  - {fileID: 8545335587820762294, guid: 42b3bb6f7c2d6c343ba11a918984e055, type: 3}
+  - {fileID: 6690533662300113195, guid: 448d14947d2ab614791ff7b443eaab3d, type: 3}
+  - {fileID: 6690533662300113195, guid: a93d04915b062db49b087323634c12c4, type: 3}
+  - {fileID: 6690533662300113195, guid: fe98c8ed7318103499c1a93f198fca45, type: 3}
+  - {fileID: 6690533662300113195, guid: 41d0c58cb452deb4ca0ad482538acb28, type: 3}
+  obstaclesGarbages2:
+  - {fileID: 8545335587820762294, guid: 904192f0f19723145bdd5759e893bd5d, type: 3}
+  - {fileID: 8545335587820762294, guid: 8418f714e386363458369c1d6848d6b0, type: 3}
+  - {fileID: 6690533662300113195, guid: 404ccbad9f6955b479bfb6555377b72c, type: 3}
+  - {fileID: 6690533662300113195, guid: 48bd3bbf90a516a46b46467810e7d951, type: 3}
+  - {fileID: 6690533662300113195, guid: 954b043c7bcd1314bb3cfe8ecd9b7e4b, type: 3}
+  - {fileID: 6690533662300113195, guid: 673be4ac37b7cf14c9d54a0136b43307, type: 3}
   spawnPoints:
   - {fileID: 1851345355}
   - {fileID: 633614173}
   - {fileID: 1173510128}
   speed: 0
+  pourcentage: 0
 --- !u!4 &1474454773
 Transform:
   m_ObjectHideFlags: 0
@@ -1117,20 +1159,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1474454774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1474454771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d9d1d4548714164cbd4e3d3c072ffb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  garbagePrefab: {fileID: 5786720125797268578, guid: 2d9baa6fe4d093c4aba8896ed2edeaf2, type: 3}
-  spawnPoint: {fileID: 2099177317}
 --- !u!1 &1546816444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1426,7 +1454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1851345356}
   m_Layer: 0
-  m_Name: Spawn1
+  m_Name: Spawn0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1545,34 +1573,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &2099177317
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2099177318}
-  m_Layer: 0
-  m_Name: SpawnGarbages
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2099177318
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2099177317}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15, y: 3.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

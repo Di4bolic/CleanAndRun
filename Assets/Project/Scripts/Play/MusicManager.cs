@@ -19,7 +19,7 @@ public class MusicManager : MonoBehaviour
         selectedMusic = musics[mM.selectedMusicIndex];
         audioSource.PlayOneShot(selectedMusic.music);
 
-        interval = (60f / selectedMusic.bpm) * 2f;
+        interval = (60f / selectedMusic.bpm) * 4f;
     }
 
     // Start is called before the first frame update
