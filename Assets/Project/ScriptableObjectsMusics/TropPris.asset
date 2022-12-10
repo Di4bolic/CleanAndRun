@@ -15,5 +15,5 @@ MonoBehaviour:
   music: {fileID: 8300000, guid: ac1ee4bc85ee2d54aab83d2587c6ce87, type: 3}
   bpm: 101
   lengh: 194
-  startSpeed: 0.05
-  endSpeed: 0.2
+  startSpeed: 0.1
+  endSpeed: 0.4
