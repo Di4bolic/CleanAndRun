@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ObstacleManager : MonoBehaviour
 {
@@ -74,6 +75,12 @@ public class ObstacleManager : MonoBehaviour
 
         // Auglentation de la vitesse des obstacles au fur et à mesure du jeu
         speed = Mathf.Lerp(musicManager.selectedMusic.startSpeed, musicManager.selectedMusic.endSpeed, pourcentage);
+
+        // Si la musique est finie
+        if (pourcentage >= 1)
+        {
+            SceneManager.LoadScene("MenuScene");
+        }
     }
 
     void SpawnObstacle()
