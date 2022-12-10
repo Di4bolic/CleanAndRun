@@ -16,11 +16,15 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if (player.munitionsScore > 0)
-        {
-            Instantiate(projectil, transform.position, Quaternion.identity);
-            player.munitionsScore--;
-            player.munitions.text = "Munitions :" + player.munitionsScore.ToString();
-        }
     }
+
+    public void tirJoueur(){
+        if (player.munitionsScore > 0)
+            {
+                Instantiate(projectil, transform.position, Quaternion.identity);
+                player.munitionsScore--;
+                player.munitions.text = "Munitions :" + player.munitionsScore.ToString();
+            }
+        }
+    
 }

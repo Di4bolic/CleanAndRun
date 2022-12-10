@@ -10,6 +10,7 @@ public class BoutTir : MonoBehaviour
     public bool clic = false;
     public Boss boss;
     public Transform thierry;
+    public Shoot shoot; 
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class BoutTir : MonoBehaviour
 
         if (boss.bossEnCours == true)
         {
-            thierry.position = new Vector3(-12, -4, -1);
+            thierry.position = new Vector3(7, -2, -1);
         }
 
 
@@ -35,7 +36,7 @@ public class BoutTir : MonoBehaviour
             Debug.Log(tempObjectConverted);
             if (tempObjectConverted != null)
             {
-                Debug.Log("Feu");
+                shoot.tirJoueur();
             }
         }
     }
