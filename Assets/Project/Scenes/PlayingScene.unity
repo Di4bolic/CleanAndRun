@@ -980,10 +980,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0f19fa8eba0474bbdfc06f34b9f8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  garbages: {fileID: 279656850}
-  munitions: {fileID: 724937909}
-  garbagesScore: 0
-  munitionsScore: 0
   player: {fileID: 1586408243}
   clic: 0
 --- !u!4 &1028630764
@@ -1516,6 +1512,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43c384adf67c43145875d8958e4a6487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  garbages: {fileID: 279656850}
+  munitions: {fileID: 724937909}
+  garbagesScore: 0
+  munitionsScore: 0
   thierry: {fileID: 1586408247}
   m_Rigidbody: {fileID: 1586408244}
   m_Thrust: 27
@@ -1633,7 +1633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60509c1ad95bd4841b3702cf0c365456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cBC: {fileID: 1028630763}
+  player: {fileID: 1586408243}
   projectil: {fileID: 8843319035085703514, guid: 6e69ec95e80fb1e4eaafa83486c60987, type: 3}
 --- !u!1 &1741682632
 GameObject:

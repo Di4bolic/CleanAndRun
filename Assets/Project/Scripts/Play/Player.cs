@@ -2,9 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Timers;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
+    // Gestion UI
+    public TextMeshProUGUI garbages;
+    public TextMeshProUGUI munitions;
+    public int garbagesScore = 0;
+    public int munitionsScore = 0;
+
     bool cooldownSaut = false;
     int nbSaut=2;
     public Transform thierry;
@@ -66,6 +73,12 @@ public class Player : MonoBehaviour
         if(other.gameObject.CompareTag("Collectible")) {
             Destroy(other.gameObject);
             NbDechetColl = NbDechetColl + 1;
+
+            // Gestion UI
+            garbagesScore++;
+            munitionsScore += 3;
+            garbages.text = "Garbages :" + garbagesScore.ToString();
+            munitions.text = "Munitions :" + munitionsScore.ToString();
         }
     }
 

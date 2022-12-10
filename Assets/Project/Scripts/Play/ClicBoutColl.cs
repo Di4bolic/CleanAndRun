@@ -7,12 +7,6 @@ using TMPro;
 
 public class ClicBoutColl : MonoBehaviour
 {
-    // Gestion UI
-    public TextMeshProUGUI garbages;
-    public TextMeshProUGUI munitions;
-    public int garbagesScore = 0;
-    public int munitionsScore = 0;
-
     public Player player;
     public bool clic=false;
     // Start is called before the first frame update
@@ -47,12 +41,6 @@ public class ClicBoutColl : MonoBehaviour
                 {
                     Destroy(tempObjectConverted2);
                     Debug.Log("detruuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuir");
-
-                    // Gestion UI
-                    garbagesScore ++;
-                    munitionsScore += 3;
-                    garbages.text = "Garbages :" + garbagesScore.ToString();
-                    munitions.text = "Munitions :" + munitionsScore.ToString();
                 }
             }
         }

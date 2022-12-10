@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    public ClicBoutColl cBC;
+    public Player player;
 
     public GameObject projectil;
     // Start is called before the first frame update
@@ -14,11 +14,13 @@ public class Shoot : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        if (cBC.munitionsScore > 0)
+        if (player.munitionsScore > 0)
         {
             Instantiate(projectil, transform.position, Quaternion.identity);
+            player.munitionsScore--;
+            player.munitions.text = "Munitions :" + player.munitionsScore.ToString();
         }
     }
 }
