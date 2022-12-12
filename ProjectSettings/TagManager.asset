@@ -9,6 +9,8 @@ TagManager:
   - Ground
   - UI
   - Obstacle
+  - Boss
+  - Projectil
   layers:
   - Default
   - TransparentFX

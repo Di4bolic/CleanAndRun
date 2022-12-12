@@ -26,8 +26,21 @@ public class Boss : MonoBehaviour
         {
             thierry.position = new Vector3(11, -1, 0);
             bossEnCours = true;
-            munBoss = munBoss+player.NbDechetColl;
-            Debug.Log(munBoss);
+            munBoss = munBoss + player.NbDechetColl;
+        }
+
+        if (vieBoss <= 0)
+        {
+            thierry.position = new Vector3(30, -1, 0);
         }
     }
+
+    private void OnTriggerEnter(Collider other){
+        Debug.Log("ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt");
+        if (other.gameObject.CompareTag("Projectil")){
+
+           vieBoss = vieBoss-50;
+           Destroy(other.gameObject);
+           }
+        }
 }

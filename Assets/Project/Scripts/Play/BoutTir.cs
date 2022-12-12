@@ -10,7 +10,9 @@ public class BoutTir : MonoBehaviour
     public bool clic = false;
     public Boss boss;
     public Transform thierry;
-    public Shoot shoot; 
+    public Shoot shoot;
+    public float tirDelay = 0.5f;
+    public float coolTirEnCours = -1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +38,11 @@ public class BoutTir : MonoBehaviour
             Debug.Log(tempObjectConverted);
             if (tempObjectConverted != null)
             {
-                shoot.tirJoueur();
+                if (Time.time > coolTirEnCours)
+                {
+                    coolTirEnCours = Time.time + tirDelay;
+                    shoot.tirJoueur();
+                }
             }
         }
     }
