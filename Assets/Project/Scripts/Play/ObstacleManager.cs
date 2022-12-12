@@ -40,6 +40,8 @@ public class ObstacleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        mM = FindObjectOfType<ManagerManager>();
+
         maxChrono = musicManager.interval;
         chrono = maxChrono;
         dansCombienUnGarbage = Random.Range(4, 8);
@@ -79,7 +81,8 @@ public class ObstacleManager : MonoBehaviour
         // Si la musique est finie
         if (pourcentage >= 1)
         {
-            SceneManager.LoadScene("MenuScene");
+
+            SceneManager.LoadScene("EndScene");
         }
     }
 

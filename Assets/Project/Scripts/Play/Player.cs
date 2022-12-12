@@ -6,6 +6,9 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
+    // Manager Manager
+    public ManagerManager mM;
+
     // Gestion UI
     public TextMeshProUGUI garbages;
     public TextMeshProUGUI munitions;
@@ -26,6 +29,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        mM = FindObjectOfType<ManagerManager>();
+
         m_Rigidbody = GetComponent<Rigidbody>();
         maxSpeed = 0.01f;
     }
@@ -77,8 +82,10 @@ public class Player : MonoBehaviour
             // Gestion UI
             garbagesScore++;
             munitionsScore += 3;
-            garbages.text = "Garbages :" + garbagesScore.ToString();
-            munitions.text = "Munitions :" + munitionsScore.ToString();
+            garbages.text = "Garbages : " + garbagesScore.ToString();
+            munitions.text = "Munitions : " + munitionsScore.ToString();
+
+            mM.recoltedGarbages = garbagesScore;
         }
     }
 

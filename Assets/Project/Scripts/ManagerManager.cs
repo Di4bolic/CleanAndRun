@@ -5,6 +5,9 @@ using UnityEngine;
 public class ManagerManager : MonoBehaviour
 {
     public int selectedMusicIndex;
+    public int recoltedGarbages;
+    public int nbrBossKilled;
+
     // Start is called before the first frame update
     void Start()
     {
