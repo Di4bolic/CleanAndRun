@@ -6,8 +6,9 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    // Manager manager
+    // Manager Manager
     public ManagerManager mM;
+
     // Gestion UI
     public TextMeshProUGUI garbages;
     public TextMeshProUGUI munitions;
@@ -33,7 +34,6 @@ public class Player : MonoBehaviour
 
         m_Rigidbody = GetComponent<Rigidbody>();
         maxSpeed = 0.01f;
-
     }
 
     // Update is called once per frame
@@ -76,7 +76,6 @@ public class Player : MonoBehaviour
             m_Rigidbody.velocity = Vector3.zero;
             nbSaut = 2;
         }
-
     }
 
 
@@ -104,6 +103,5 @@ public class Player : MonoBehaviour
             // Nombre de déchêts mis à jour dans le mM
             mM.recoltedGarbages = garbagesScore;
         }
-    }
-
+    }   
 }
