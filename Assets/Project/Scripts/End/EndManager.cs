@@ -28,7 +28,7 @@ public class EndManager : MonoBehaviour
 
     public void GoMenu()
     {
-        SceneManager.LoadScene("EndScene");
+        SceneManager.LoadScene("MenuScene");
     }
 
     public void ReDo()

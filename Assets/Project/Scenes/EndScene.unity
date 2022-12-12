@@ -1218,8 +1218,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mM: {fileID: 0}
-  garbagesScoreTotal: {fileID: 0}
-  bossScoreTotal: {fileID: 0}
+  garbagesScoreTotal: {fileID: 534057797}
+  bossScoreTotal: {fileID: 1091158793}
 --- !u!4 &1741373225
 Transform:
   m_ObjectHideFlags: 0
