@@ -40,8 +40,6 @@ public class ObstacleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mM = FindObjectOfType<ManagerManager>();
-
         maxChrono = musicManager.interval;
         chrono = maxChrono;
         dansCombienUnGarbage = Random.Range(4, 8);

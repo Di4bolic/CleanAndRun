@@ -1846,6 +1846,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedMusicIndex: 0
+  recoltedGarbages: 0
+  nbrBossKilled: 0
 --- !u!4 &943389754
 Transform:
   m_ObjectHideFlags: 0

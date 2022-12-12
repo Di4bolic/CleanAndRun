@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Trouve le mM
         mM = FindObjectOfType<ManagerManager>();
 
         m_Rigidbody = GetComponent<Rigidbody>();
@@ -85,6 +86,7 @@ public class Player : MonoBehaviour
             garbages.text = "Garbages : " + garbagesScore.ToString();
             munitions.text = "Munitions : " + munitionsScore.ToString();
 
+            // Nombre de déchêts mis à jour dans le mM
             mM.recoltedGarbages = garbagesScore;
         }
     }
