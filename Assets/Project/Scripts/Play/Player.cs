@@ -6,6 +6,9 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
+    // Manager Manager
+    public ManagerManager mM;
+
     // Gestion UI
     public TextMeshProUGUI garbages;
     public TextMeshProUGUI munitions;
@@ -26,6 +29,9 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Trouve le mM
+        mM = FindObjectOfType<ManagerManager>();
+
         m_Rigidbody = GetComponent<Rigidbody>();
         maxSpeed = 0.01f;
     }
@@ -70,7 +76,19 @@ public class Player : MonoBehaviour
             m_Rigidbody.velocity = Vector3.zero;
             nbSaut = 2;
         }
-       
+        if(other.gameObject.CompareTag("Collectible")) {
+            Destroy(other.gameObject);
+            NbDechetColl = NbDechetColl + 1;
+
+            // Gestion UI
+            garbagesScore++;
+            munitionsScore += 3;
+            garbages.text = "Garbages : " + garbagesScore.ToString();
+            munitions.text = "Munitions : " + munitionsScore.ToString();
+
+            // Nombre de déchêts mis à jour dans le mM
+            mM.recoltedGarbages = garbagesScore;
+        }
     }
 
 
