@@ -12,6 +12,7 @@ public class Boss : MonoBehaviour
     public float stunEnCours = -1f;
     public int vieBoss = 100;
     public int munBoss = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,11 +37,12 @@ public class Boss : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other){
-        Debug.Log("ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt");
-        if (other.gameObject.CompareTag("Projectil")){
-
+        if (other.gameObject.CompareTag("Projectil"))
+        {
            vieBoss = vieBoss-50;
            Destroy(other.gameObject);
-           }
         }
+    }
+
+
 }

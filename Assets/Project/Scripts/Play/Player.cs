@@ -70,16 +70,7 @@ public class Player : MonoBehaviour
             m_Rigidbody.velocity = Vector3.zero;
             nbSaut = 2;
         }
-        if(other.gameObject.CompareTag("Collectible")) {
-            Destroy(other.gameObject);
-            NbDechetColl = NbDechetColl + 1;
-
-            // Gestion UI
-            garbagesScore++;
-            munitionsScore += 3;
-            garbages.text = "Garbages :" + garbagesScore.ToString();
-            munitions.text = "Munitions :" + munitionsScore.ToString();
-        }
+       
     }
 
 
@@ -91,6 +82,18 @@ public class Player : MonoBehaviour
             stunEnCours = Time.time + stunDelay;
 
             m_Rigidbody.GetComponent<Renderer>().material.color = Color.red;
+        }
+
+        if (other.gameObject.CompareTag("Collectible"))
+        {
+            Destroy(other.gameObject);
+            NbDechetColl = NbDechetColl + 1;
+
+            // Gestion UI
+            garbagesScore++;
+            munitionsScore += 3;
+            garbages.text = "Garbages :" + garbagesScore.ToString();
+            munitions.text = "Munitions :" + munitionsScore.ToString();
         }
     }
         /*private void OnCollisionStay(Collision other) {
