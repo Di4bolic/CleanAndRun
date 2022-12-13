@@ -16,4 +16,4 @@ MonoBehaviour:
   bpm: 175
   lengh: 275
   startSpeed: 8
-  endSpeed: 32
+  endSpeed: 16
