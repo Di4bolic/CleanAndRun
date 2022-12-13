@@ -14,7 +14,7 @@ public class MoveObstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.left*gM.GetComponent<ObstacleManager>().speed;
+        transform.position += Vector3.left*gM.GetComponent<ObstacleManager>().speed*Time.deltaTime;
 
         // Destruction du GameObject
         if (transform.position.x <= -15)

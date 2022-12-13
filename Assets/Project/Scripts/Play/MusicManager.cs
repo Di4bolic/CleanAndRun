@@ -17,7 +17,8 @@ public class MusicManager : MonoBehaviour
     {
         mM = FindObjectOfType<ManagerManager>();
         selectedMusic = musics[mM.selectedMusicIndex];
-        audioSource.PlayOneShot(selectedMusic.music);
+        audioSource.clip = selectedMusic.music;
+        audioSource.Play(0);
 
         interval = (60f / selectedMusic.bpm) * 4f;
     }
