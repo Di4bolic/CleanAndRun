@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Pause : MonoBehaviour
@@ -23,21 +24,23 @@ public class Pause : MonoBehaviour
 
     public void PauseGame()
     {
-        if (isPaused)
-        {
-            pauseButton.text = "|>";
-            Time.timeScale = 1;
-            aS.Play();
-            isPaused = false;
-        }
-        else
-        {
-            pauseButton.text = "| |";
-            Time.timeScale = 0;
-            aS.Pause();
-            isPaused = true;
-        }
-        
+        Time.timeScale = 0;
+        aS.Pause();
+    }
 
+    public void Resume()
+    {
+        Time.timeScale = 1;
+        aS.Play();            
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("PlayingScene");
+    }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene("MenuScene");
     }
 }
