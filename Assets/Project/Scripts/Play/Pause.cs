@@ -7,8 +7,6 @@ using TMPro;
 public class Pause : MonoBehaviour
 {
     public AudioSource aS;
-    public TextMeshProUGUI pauseButton;
-    public bool isPaused = false;
 
     public GameObject pauseMenu;
 
