@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveProjectil : MonoBehaviour
 {
-    public float projectilSpeed = 0.001f;
+    float projectilSpeed = 20f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,7 @@ public class MoveProjectil : MonoBehaviour
     void Update()
     {
 
-        transform.position += Vector3.right* projectilSpeed;
+        transform.position += Vector3.right * projectilSpeed * Time.deltaTime;
         // Destruction du GameObject
         if (transform.position.x >= 15)
         {
