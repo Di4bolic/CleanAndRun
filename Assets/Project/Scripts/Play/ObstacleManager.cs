@@ -79,7 +79,6 @@ public class ObstacleManager : MonoBehaviour
         // Si la musique est finie
         if (pourcentage >= 1)
         {
-
             SceneManager.LoadScene("EndScene");
         }
     }
