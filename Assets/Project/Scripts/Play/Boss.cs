@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class Boss : MonoBehaviour
     public int vieBoss = 100;
     public int munBoss = 0;
 
+    public Image barreVieFill;
+    public GameObject barreVieFill2;
+    public GameObject barreVieCadre;
+    public GameObject barreVieFond;
+    public GameObject barreVieAffichage;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,19 +34,23 @@ public class Boss : MonoBehaviour
             thierry.position = new Vector3(11, -1, 0);
             bossEnCours = true;
             munBoss = munBoss + player.NbDechetColl;
+            barreVieFill2.SetActive(true);
+            barreVieCadre.SetActive(true);
+            barreVieFond.SetActive(true);
         }
 
         if (vieBoss <= 0)
         {
-            thierry.position = new Vector3(30, -1, 0);
+            thierry.position = new Vector3(11, 30, 0);
         }
     }
 
     private void OnTriggerEnter(Collider other){
         if (other.gameObject.CompareTag("Projectil"))
         {
-           vieBoss = vieBoss-50;
+           vieBoss = vieBoss-5;
            Destroy(other.gameObject);
+           barreVieFill.fillAmount = barreVieFill.fillAmount - 0.05f;
         }
     }
 
