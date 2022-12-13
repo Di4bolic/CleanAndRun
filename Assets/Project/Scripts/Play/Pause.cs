@@ -10,6 +10,8 @@ public class Pause : MonoBehaviour
     public TextMeshProUGUI pauseButton;
     public bool isPaused = false;
 
+    public GameObject pauseMenu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,21 +28,25 @@ public class Pause : MonoBehaviour
     {
         Time.timeScale = 0;
         aS.Pause();
+        pauseMenu.SetActive(true);
     }
 
     public void Resume()
     {
         Time.timeScale = 1;
-        aS.Play();            
+        aS.Play();
+        pauseMenu.SetActive(false);
     }
 
     public void Restart()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("PlayingScene");
     }
 
     public void Menu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("MenuScene");
     }
 }
