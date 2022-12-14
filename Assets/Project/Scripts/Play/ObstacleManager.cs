@@ -37,6 +37,8 @@ public class ObstacleManager : MonoBehaviour
 
     int dansCombienUnGarbage;
 
+    public Boss boss;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -81,6 +83,13 @@ public class ObstacleManager : MonoBehaviour
         {
             SceneManager.LoadScene("EndScene");
         }
+
+
+        if (pourcentage >= 0.1 && boss.bossEnCours==false)
+        {
+            boss.SpawnBoss();
+        }
+
     }
 
     void SpawnObstacle()
