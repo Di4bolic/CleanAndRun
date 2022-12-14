@@ -71,7 +71,7 @@ public class Boss : MonoBehaviour
         {
             vieBoss = 100;
             barreVieFill.fillAmount = 1f;
-            thierry.position = new Vector3(9, -1, 0);
+            thierry.position = new Vector3(6, -4, 0);
             bossEnCours = true;
             munBoss = munBoss + player.NbDechetColl;
             barreVieFill2.SetActive(true);
@@ -82,7 +82,9 @@ public class Boss : MonoBehaviour
 
     public void paternBossAttack()
     {
-        Instantiate(vomiBoss, thierry.position, Quaternion.identity);
+        var newTransform = thierry.position + new Vector3(0, 4, 0);
+        Instantiate(vomiBoss, newTransform, Quaternion.identity);
+        this.GetComponent<Animator>().Play("BossAttack");
     }
 
 }
