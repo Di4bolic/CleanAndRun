@@ -19,6 +19,8 @@ public class Boss : MonoBehaviour
     public GameObject barreVieCadre;
     public GameObject barreVieFond;
     public GameObject barreVieAffichage;
+
+    public ObstacleManager om;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +31,7 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > stunEnCours && bossEnCours == false)
+        /*if (Time.time > stunEnCours && bossEnCours == false)
         {
             thierry.position = new Vector3(11, -1, 0);
             bossEnCours = true;
@@ -37,11 +39,15 @@ public class Boss : MonoBehaviour
             barreVieFill2.SetActive(true);
             barreVieCadre.SetActive(true);
             barreVieFond.SetActive(true);
-        }
+        }*/
 
-        if (vieBoss <= 0)
+        if (vieBoss <= 0 && bossEnCours == true)
         {
             thierry.position = new Vector3(11, 30, 0);
+            bossEnCours =false;
+            barreVieFill2.SetActive(false);
+            barreVieCadre.SetActive(false);
+            barreVieFond.SetActive(false);
         }
     }
 
@@ -50,9 +56,21 @@ public class Boss : MonoBehaviour
         {
            vieBoss = vieBoss-5;
            Destroy(other.gameObject);
-           barreVieFill.fillAmount = barreVieFill.fillAmount - 0.05f;
+           barreVieFill.fillAmount = barreVieFill.fillAmount - 0.5f;
         }
     }
 
+
+    public void SpawnBoss()
+    {
+        vieBoss = 100;
+        barreVieFill.fillAmount = 1f;
+        thierry.position = new Vector3(11, -1, 0);
+        bossEnCours = true;
+        munBoss = munBoss + player.NbDechetColl;
+        barreVieFill2.SetActive(true);
+        barreVieCadre.SetActive(true);
+        barreVieFond.SetActive(true);
+    }
 
 }
