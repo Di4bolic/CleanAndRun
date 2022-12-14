@@ -39,6 +39,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        /*
         if (Input.touchCount >= 1 && cooldownSaut==false && nbSaut>0 && Time.time> stunEnCours)
         {
             var tempVector = new Vector3(Input.touches[0].position.x, Input.touches[0].position.y, Camera.main.nearClipPlane);
@@ -56,7 +58,7 @@ public class Player : MonoBehaviour
                 m_Rigidbody.velocity = Vector3.zero;
                 m_Rigidbody.AddForce(0, m_Thrust, 0, ForceMode.Impulse);
             }
-        }
+        }*/
 
         if (Input.touchCount == 0 && cooldownSaut == true)
         {
@@ -104,4 +106,15 @@ public class Player : MonoBehaviour
             mM.recoltedGarbages = garbagesScore;
         }
     }   
+
+    public void JumpPlayer(){
+        if (Input.touchCount >= 1 && cooldownSaut == false && nbSaut > 0 && Time.time > stunEnCours)
+        {
+                cooldownSaut = true;
+                nbSaut = nbSaut - 1;
+
+                m_Rigidbody.velocity = Vector3.zero;
+                m_Rigidbody.AddForce(0, m_Thrust, 0, ForceMode.Impulse);
+        }
+    }
 }
