@@ -73,6 +73,13 @@ public class ObstacleManager : MonoBehaviour
 
             // Augmentation de pourcentage
             pourcentage += 1 / (musicManager.selectedMusic.lengh / maxChrono);
+
+            if (boss.bossEnCours)
+            {
+                boss.paternBossAttack();
+            }
+
+
         }
 
         // Auglentation de la vitesse des obstacles au fur et à mesure du jeu
