@@ -17,3 +17,4 @@ MonoBehaviour:
   lengh: 194
   startSpeed: 4
   endSpeed: 12
+  difficulty: Easy

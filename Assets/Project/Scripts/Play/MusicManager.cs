@@ -11,6 +11,7 @@ public class MusicManager : MonoBehaviour
     public Music selectedMusic;
 
     public float interval;
+    public string difficulty;
 
     // Awake is called before Start
     void Awake()
