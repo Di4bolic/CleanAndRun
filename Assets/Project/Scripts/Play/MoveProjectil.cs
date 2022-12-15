@@ -6,17 +6,19 @@ public class MoveProjectil : MonoBehaviour
 {
     float projectilSpeed = 15f;
     float rotationSpeed = 300f;
+    public Rigidbody m_Rigidbody;
+    public float m_Thrust = 0.01f;
     // Start is called before the first frame update
     void Start()
     {
-
+        m_Rigidbody.AddForce(0, m_Thrust, 0, ForceMode.Impulse);
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        transform.position += Vector3.right * projectilSpeed * Time.deltaTime;
+        //transform.position += Vector3.right * projectilSpeed * Time.deltaTime;
         transform.eulerAngles += new Vector3(0, 0, 1) * Time.deltaTime * -rotationSpeed;
         // Destruction du GameObject
         if (transform.position.x >= 15)
