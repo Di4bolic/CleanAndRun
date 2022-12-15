@@ -109,7 +109,7 @@ public class ObstacleManager : MonoBehaviour
         }
 
 
-        if (pourcentage >= 0.7 && boss.bossEnCours==false)
+        if (pourcentage >= 0.6 && boss.bossEnCours==false)
         {
             boss.SpawnBoss();
         }
