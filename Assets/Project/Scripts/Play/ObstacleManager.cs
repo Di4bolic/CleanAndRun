@@ -7,19 +7,19 @@ public class ObstacleManager : MonoBehaviour
 {
     public MusicManager musicManager;
 
-    // Liste difficulté 1
+    // Liste difficultï¿½ 1
     public List<GameObject> obstaclesEasy;
     public List<GameObject> obstaclesGarbagesEasy;
 
-    // Liste difficulté 2
+    // Liste difficultï¿½ 2
     public List<GameObject> obstaclesMedium;
     public List<GameObject> obstaclesGarbagesMedium;
 
-    // Liste difficulté 3
+    // Liste difficultï¿½ 3
     public List<GameObject> obstaclesHard;
     public List<GameObject> obstaclesGarbagesHard;
 
-    // Les listes qui vont servir de conteneurs pour les listes de spawn aléatoire
+    // Les listes qui vont servir de conteneurs pour les listes de spawn alï¿½atoire
     List<GameObject> obstacles;
     List<GameObject> obstaclesGarbages;
 
@@ -42,7 +42,7 @@ public class ObstacleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Définition de la liste d'obstacle en fonction de la difficulté
+        // Dï¿½finition de la liste d'obstacle en fonction de la difficultï¿½
         if (musicManager.selectedMusic.difficulty == "Easy")
         {
             obstacles = obstaclesEasy;
@@ -88,7 +88,7 @@ public class ObstacleManager : MonoBehaviour
             // Augmentation de pourcentage
             pourcentage += 1 / (musicManager.selectedMusic.lengh / maxChrono);
 
-            // Augmentation de la fréquence de spawn
+            // Augmentation de la frï¿½quence de spawn
             maxChrono /= musicManager.selectedMusic.baisseDivision;
 
             chrono = maxChrono;
@@ -99,7 +99,7 @@ public class ObstacleManager : MonoBehaviour
             }
         }
 
-        // Auglentation de la vitesse des obstacles au fur et à mesure du jeu
+        // Auglentation de la vitesse des obstacles au fur et ï¿½ mesure du jeu
         speed = Mathf.Lerp(musicManager.selectedMusic.startSpeed, musicManager.selectedMusic.endSpeed, pourcentage);
 
         // Si la musique est finie
@@ -109,7 +109,7 @@ public class ObstacleManager : MonoBehaviour
         }
 
 
-        if (pourcentage >= 0.1 && boss.bossEnCours==false)
+        if (pourcentage >= 0.7 && boss.bossEnCours==false)
         {
             boss.SpawnBoss();
         }

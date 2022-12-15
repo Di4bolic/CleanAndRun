@@ -29,6 +29,8 @@ public class Boss : MonoBehaviour
     public bool attackPatern1 = false;
     public Animator animator;
 
+    public int NbBossTue=0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -47,7 +49,8 @@ public class Boss : MonoBehaviour
             barreVieCadre.SetActive(false);
             barreVieFond.SetActive(false);
 
-            respawnEnCours = Time.time + stunDelay;
+            respawnEnCours = Time.time + respawnDelay;
+            NbBossTue=NbBossTue+1;
         }
 
         if (bossEnCours == true)
@@ -60,9 +63,9 @@ public class Boss : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         if (other.gameObject.CompareTag("Projectil"))
         {
-           vieBoss = vieBoss-60;
+           vieBoss = vieBoss-5;
            Destroy(other.gameObject);
-           barreVieFill.fillAmount = barreVieFill.fillAmount - 0.6f;
+           barreVieFill.fillAmount = barreVieFill.fillAmount - 0.05f;
         }
     }
 
