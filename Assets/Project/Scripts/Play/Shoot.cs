@@ -19,12 +19,13 @@ public class Shoot : MonoBehaviour
     }
 
     public void tirJoueur(){
-        if (player.munitionsScore > 0)
-            {
-                Instantiate(projectil, transform.position, Quaternion.identity);
-                player.munitionsScore--;
-                player.munitions.text = "Munitions :" + player.munitionsScore.ToString();
-            }
+        if (player.munitionsScore > 0 && player.stun==false)
+        {
+            var newTransform = transform.position + new Vector3(0, 2, 0);
+            Instantiate(projectil, newTransform, Quaternion.identity);
+            player.munitionsScore--;
+            player.munitions.text = "Munitions :" + player.munitionsScore.ToString();
         }
+    }
     
 }

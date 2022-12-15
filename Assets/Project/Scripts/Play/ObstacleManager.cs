@@ -18,7 +18,7 @@ public class ObstacleManager : MonoBehaviour
     // Liste Spawn 3
     public List<GameObject> obstacles2;
     public List<GameObject> obstaclesGarbages2;
-
+    //public Animator animator;
     // Les listes qui vont servir de conteneurs pour les listes de spawn aléatoire
     List<GameObject> obstacles;
     List<GameObject> obstaclesGarbages;
@@ -42,6 +42,7 @@ public class ObstacleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //animator.SetTrigger("");
         maxChrono = musicManager.interval;
         chrono = maxChrono;
         dansCombienUnGarbage = Random.Range(4, 8);
