@@ -11,4 +11,6 @@ public class Music : ScriptableObject
     public float startSpeed;
     public float endSpeed;
     public string difficulty;
+    public float baisseDivision;
+    public string titre;
 }

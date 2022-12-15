@@ -18,3 +18,5 @@ MonoBehaviour:
   startSpeed: 4
   endSpeed: 12
   difficulty: Easy
+  baisseDivision: 1.06
+  titre: Trop Pris

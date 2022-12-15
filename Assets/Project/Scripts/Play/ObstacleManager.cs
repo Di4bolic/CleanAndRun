@@ -27,8 +27,10 @@ public class ObstacleManager : MonoBehaviour
 
     float chrono;
     float maxChrono;
+    public float maxChronoModif;
     public float speed;
     public float pourcentage = 0f;
+    public float division = 15f;
 
     int randomObstacle;
     int randomObstacleSave;
@@ -56,8 +58,9 @@ public class ObstacleManager : MonoBehaviour
             obstacles = obstaclesHard;
             obstaclesGarbages = obstaclesGarbagesHard;
         }
-        maxChrono = musicManager.interval;
-        chrono = maxChrono;
+        maxChrono = musicManager.interval * division;
+        maxChronoModif = maxChrono;
+        chrono = maxChronoModif;
         dansCombienUnGarbage = Random.Range(1, 2);
 
         speed = musicManager.selectedMusic.startSpeed;
@@ -66,14 +69,13 @@ public class ObstacleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(maxChrono);
         if (chrono > 0)
         {
             chrono -= Time.deltaTime;
         }
         else
         {
-            chrono = maxChrono;
+            chrono = maxChronoModif;
             dansCombienUnGarbage --;
             if (dansCombienUnGarbage == 0)
             {
@@ -85,8 +87,11 @@ public class ObstacleManager : MonoBehaviour
                 SpawnObstacle();
             }
 
+            // Augmentation de la fréquence de spawn
+            maxChronoModif /= musicManager.selectedMusic.baisseDivision;
+
             // Augmentation de pourcentage
-            pourcentage += 1 / (musicManager.selectedMusic.lengh / maxChrono);
+            pourcentage += musicManager.selectedMusic.lengh / maxChrono;
 
             if (boss.bossEnCours)
             {
