@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99f30f2a79fb0348bf2b2785fda520d, type: 3}
   m_Name: TropPris
   m_EditorClassIdentifier: 
-  music: {fileID: 8300000, guid: ac1ee4bc85ee2d54aab83d2587c6ce87, type: 3}
+  music: {fileID: 8300000, guid: eb3380721344c394ead94f31aa72360f, type: 3}
   bpm: 101
-  lengh: 194
+  lengh: 179
   startSpeed: 4
   endSpeed: 12
   difficulty: Easy
-  baisseDivision: 1.06
+  baisseDivision: 1.03
   titre: Trop Pris
