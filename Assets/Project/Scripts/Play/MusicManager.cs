@@ -21,7 +21,9 @@ public class MusicManager : MonoBehaviour
         audioSource.clip = selectedMusic.music;
         audioSource.Play(0);
 
-        interval = (60f / selectedMusic.bpm) * 4f;
+        interval = (60f / selectedMusic.bpm) * 16f;
+
+        difficulty = selectedMusic.difficulty;
     }
 
     // Start is called before the first frame update
