@@ -712,6 +712,7 @@ MonoBehaviour:
   respawnEnCours: -1
   respawnDelay: 2
   attackPatern1: 0
+  animator: {fileID: 403499712}
 --- !u!65 &403499711
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2857,7 +2858,7 @@ MonoBehaviour:
   munitionsScore: 0
   thierry: {fileID: 1586408247}
   m_Rigidbody: {fileID: 1586408244}
-  m_Thrust: 27
+  m_Thrust: 23
   clicBouton: {fileID: 0}
   stun: 0
   stunDelay: 1
@@ -2865,6 +2866,9 @@ MonoBehaviour:
   NbDechetColl: 0
   maxSpeed: 0
   animator: {fileID: 1586408250}
+  spriteRenderer: {fileID: 1586408246}
+  newSpriteSaut1: {fileID: -833266643, guid: b8b66a964c22d1f48b24df8fc8a85498, type: 3}
+  newSpriteSaut2: {fileID: -2115270490, guid: b8b66a964c22d1f48b24df8fc8a85498, type: 3}
 --- !u!54 &1586408244
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2892,8 +2896,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8039365, y: 3.396411, z: 0.2}
-  m_Center: {x: 1.06726, y: 1.6965384, z: 0}
+  m_Size: {x: 1.3417301, y: 3.0392518, z: 0.2}
+  m_Center: {x: 1.1302881, y: 1.5179589, z: 0}
 --- !u!212 &1586408246
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2935,12 +2939,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -544731736, guid: 52df7d4891e5adc418f63bb8aec49d44, type: 3}
+  m_Sprite: {fileID: -1720394826, guid: 52df7d4891e5adc418f63bb8aec49d44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.31, y: 3.9}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

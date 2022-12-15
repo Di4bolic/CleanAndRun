@@ -146,8 +146,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 229
-        height: 350
+        width: 231
+        height: 390
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,8 +155,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc1892250c19b9d4ca688b92dcddc838
-      internalID: -544731736
+      spriteID: e59fd233368de5f459ca4504253c5de5
+      internalID: -1720394826
       vertices: []
       indices: 
       edges: []
@@ -165,10 +165,10 @@ TextureImporter:
       name: Spritesheet_Course_1
       rect:
         serializedVersion: 2
-        x: 229
+        x: 231
         y: 0
-        width: 229
-        height: 350
+        width: 231
+        height: 390
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,8 +176,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a684ea69b19688b4f9bb91caa02f29b0
-      internalID: -292903176
+      spriteID: f02e575831f1bc24d9404a417f367aa9
+      internalID: 1318615902
       vertices: []
       indices: 
       edges: []
@@ -186,10 +186,10 @@ TextureImporter:
       name: Spritesheet_Course_2
       rect:
         serializedVersion: 2
-        x: 458
+        x: 462
         y: 0
-        width: 229
-        height: 350
+        width: 231
+        height: 390
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,8 +197,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2d8c3d5e3425164cb3c78e81d237a9a
-      internalID: 56755388
+      spriteID: 0b7935a36bc9e3f4a82dd3de949535cc
+      internalID: 1905389181
       vertices: []
       indices: 
       edges: []
@@ -207,10 +207,10 @@ TextureImporter:
       name: Spritesheet_Course_3
       rect:
         serializedVersion: 2
-        x: 687
+        x: 693
         y: 0
-        width: 229
-        height: 350
+        width: 231
+        height: 390
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,8 +218,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43766f13d794307439f1163f8531c10f
-      internalID: -1262895034
+      spriteID: 11c93131157a3d64a82800b745c907f0
+      internalID: -499308726
       vertices: []
       indices: 
       edges: []
@@ -228,10 +228,10 @@ TextureImporter:
       name: Spritesheet_Course_4
       rect:
         serializedVersion: 2
-        x: 916
+        x: 924
         y: 0
-        width: 229
-        height: 350
+        width: 231
+        height: 390
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,29 +239,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 941a6e22924f6694da620727f4432357
-      internalID: -1475154430
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spritesheet_Course_5
-      rect:
-        serializedVersion: 2
-        x: 1145
-        y: 0
-        width: 229
-        height: 350
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 96ddaee483a4a6b43b972126660364d6
-      internalID: -660653420
+      spriteID: 8bec1ce4a9ca3d444844b72356f05d4f
+      internalID: 1064501155
       vertices: []
       indices: 
       edges: []
@@ -277,12 +256,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Spritesheet_Course_1: -292903176
-      Spritesheet_Course_2: 56755388
-      Spritesheet_Course_3: -1262895034
-      Spritesheet_Course_0: -544731736
-      Spritesheet_Course_5: -660653420
-      Spritesheet_Course_4: -1475154430
+      Spritesheet_Course_1: 1318615902
+      Spritesheet_Course_2: 1905389181
+      Spritesheet_Course_3: -499308726
+      Spritesheet_Course_0: -1720394826
+      Spritesheet_Course_4: 1064501155
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

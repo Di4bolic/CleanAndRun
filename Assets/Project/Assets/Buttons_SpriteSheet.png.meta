@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9623d5a6759e4494eaa697bfd8f089ab
+guid: eaf1e3e6e5274004784c6ccb39452442
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,64 +141,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spritesheet_Douleur_0
+      name: Attack_Pressed
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 231
-        height: 390
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        x: 37
+        y: 1748
+        width: 257
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70b4bec900d69bd488553a69e2d0e1f1
-      internalID: 2032488581
+      spriteID: 68ad5dff804f458438873ce65d362ba8
+      internalID: -529201796
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_Douleur_1
+      name: Buttons_SpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 231
-        y: 0
-        width: 231
-        height: 390
-      alignment: 6
+        x: 303
+        y: 1746
+        width: 259
+        height: 286
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfbe5c799de69df4a884bf04238573cb
-      internalID: -1766537754
+      spriteID: e0c4bf60c44394344881cd3cd1fd2665
+      internalID: -1738973021
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_Douleur_2
+      name: Buttons_SpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 462
-        y: 0
-        width: 231
-        height: 390
-      alignment: 6
+        x: 567
+        y: 1744
+        width: 257
+        height: 286
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca2069bb993ef324db484dd8d2e60bf7
-      internalID: 1267862273
+      spriteID: 16238d60e36e43e46b9833eb1ed62593
+      internalID: 539667962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons_SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 1759
+        width: 255
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc9c7c87867b0f4abcabccdc4a7e2eb
+      internalID: 675729538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 1756
+        width: 257
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1d262abdf10cd648b72da46c4295f9f
+      internalID: -2125716891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 1748
+        width: 256
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f76903d485d7cd4ea3e4a4eb932ca54
+      internalID: 1299188198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 1748
+        width: 256
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4612deae65fd27f4aa9efa7c0daf7fe6
+      internalID: 497053856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons_SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1445
+        width: 258
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fdff16647f1fb749b9c950059e373c6
+      internalID: 436241728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons_SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 1448
+        width: 257
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4b78f8067707a144a61ecb143983fdd
+      internalID: -1911464224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buttons_SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 1465
+        width: 257
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c771d12d16bb3e44bc2adffa2eecf91
+      internalID: 600367230
       vertices: []
       indices: 
       edges: []
@@ -214,9 +361,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Spritesheet_Douleur_0: 2032488581
-      Spritesheet_Douleur_2: 1267862273
-      Spritesheet_Douleur_1: -1766537754
+      Buttons_SpriteSheet_6: 436241728
+      Buttons_SpriteSheet_1: 539667962
+      Buttons_SpriteSheet_7: -1911464224
+      Attack_Pressed: -529201796
+      Buttons_SpriteSheet_2: 675729538
+      Buttons_SpriteSheet_3: -2125716891
+      Buttons_SpriteSheet_8: 600367230
+      Buttons_SpriteSheet_5: 497053856
+      Buttons_SpriteSheet_4: 1299188198
+      Buttons_SpriteSheet_0: -1738973021
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

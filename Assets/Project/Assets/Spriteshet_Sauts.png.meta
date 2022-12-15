@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9623d5a6759e4494eaa697bfd8f089ab
+guid: b8b66a964c22d1f48b24df8fc8a85498
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,12 +141,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spritesheet_Douleur_0
+      name: Spriteshet_Sauts_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 231
+        width: 262
         height: 390
       alignment: 6
       pivot: {x: 0, y: 0}
@@ -155,19 +155,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70b4bec900d69bd488553a69e2d0e1f1
-      internalID: 2032488581
+      spriteID: 99eba4a06e2e78c488a0f62eeadc1b7c
+      internalID: -833266643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_Douleur_1
+      name: Spriteshet_Sauts_1
       rect:
         serializedVersion: 2
-        x: 231
+        x: 262
         y: 0
-        width: 231
+        width: 262
         height: 390
       alignment: 6
       pivot: {x: 0, y: 0}
@@ -176,29 +176,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfbe5c799de69df4a884bf04238573cb
-      internalID: -1766537754
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spritesheet_Douleur_2
-      rect:
-        serializedVersion: 2
-        x: 462
-        y: 0
-        width: 231
-        height: 390
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ca2069bb993ef324db484dd8d2e60bf7
-      internalID: 1267862273
+      spriteID: 066061abf3a832f4b85e88eaed474c02
+      internalID: -2115270490
       vertices: []
       indices: 
       edges: []
@@ -214,9 +193,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Spritesheet_Douleur_0: 2032488581
-      Spritesheet_Douleur_2: 1267862273
-      Spritesheet_Douleur_1: -1766537754
+      Spriteshet_Sauts_0: -833266643
+      Spriteshet_Sauts_1: -2115270490
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

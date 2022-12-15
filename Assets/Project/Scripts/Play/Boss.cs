@@ -27,6 +27,8 @@ public class Boss : MonoBehaviour
     public float respawnDelay = 1f;
 
     public bool attackPatern1 = false;
+    public Animator animator;
+
 
     // Start is called before the first frame update
     void Start()
@@ -77,14 +79,15 @@ public class Boss : MonoBehaviour
             barreVieFill2.SetActive(true);
             barreVieCadre.SetActive(true);
             barreVieFond.SetActive(true);
+            this.GetComponent<Animator>().Play("BossIdle");
         }
     }
 
     public void paternBossAttack()
     {
-        var newTransform = thierry.position + new Vector3(0, 4, 0);
-        Instantiate(vomiBoss, newTransform, Quaternion.identity);
         this.GetComponent<Animator>().Play("BossAttack");
+        var newTransform = thierry.position + new Vector3(1, 3, 0);
+        Instantiate(vomiBoss, newTransform, Quaternion.identity);
+        animator.SetTrigger("finAttack");
     }
-
 }

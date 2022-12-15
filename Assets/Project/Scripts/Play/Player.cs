@@ -29,6 +29,12 @@ public class Player : MonoBehaviour
 
 
     public Animator animator;
+
+
+    public SpriteRenderer spriteRenderer;
+    public Sprite newSpriteSaut1;
+    public Sprite newSpriteSaut2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,9 +59,9 @@ public class Player : MonoBehaviour
             //animator.SetTrigger("Run");
             stun = false;
             this.GetComponent<Animator>().Play("RunAnim");
-            m_Rigidbody.GetComponent<Renderer>().material.color = Color.white;
+            //m_Rigidbody.GetComponent<Renderer>().material.color = Color.white;
+
         }
-      
     }
 
     private void OnCollisionEnter(Collision other) {
@@ -73,7 +79,7 @@ public class Player : MonoBehaviour
             stun = true;
             stunEnCours = Time.time + stunDelay;
 
-            m_Rigidbody.GetComponent<Renderer>().material.color = Color.red;
+            //m_Rigidbody.GetComponent<Renderer>().material.color = Color.red;
             //animator.SetTrigger("Stun");
             this.GetComponent<Animator>().Play("playerStun");
         }
@@ -97,11 +103,10 @@ public class Player : MonoBehaviour
     public void JumpPlayer(){
         if (Input.touchCount >= 1 && cooldownSaut == false && nbSaut > 0 && Time.time > stunEnCours)
         {
-                cooldownSaut = true;
-                nbSaut = nbSaut - 1;
-
-                m_Rigidbody.velocity = Vector3.zero;
-                m_Rigidbody.AddForce(0, m_Thrust, 0, ForceMode.Impulse);
+            cooldownSaut = true;
+            nbSaut = nbSaut - 1;
+            m_Rigidbody.velocity = Vector3.zero;
+            m_Rigidbody.AddForce(0, m_Thrust, 0, ForceMode.Impulse);
         }
     }
 }
