@@ -59,8 +59,7 @@ public class ObstacleManager : MonoBehaviour
             obstaclesGarbages = obstaclesGarbagesHard;
         }
         maxChrono = musicManager.interval * division;
-        maxChronoModif = maxChrono;
-        chrono = maxChronoModif;
+        chrono = maxChrono;
         dansCombienUnGarbage = Random.Range(1, 2);
 
         speed = musicManager.selectedMusic.startSpeed;
@@ -75,7 +74,6 @@ public class ObstacleManager : MonoBehaviour
         }
         else
         {
-            chrono = maxChronoModif;
             dansCombienUnGarbage --;
             if (dansCombienUnGarbage == 0)
             {
@@ -87,18 +85,18 @@ public class ObstacleManager : MonoBehaviour
                 SpawnObstacle();
             }
 
-            // Augmentation de la fréquence de spawn
-            maxChronoModif /= musicManager.selectedMusic.baisseDivision;
-
             // Augmentation de pourcentage
-            pourcentage += musicManager.selectedMusic.lengh / maxChrono;
+            pourcentage += 1 / (musicManager.selectedMusic.lengh / maxChrono);
+
+            // Augmentation de la fréquence de spawn
+            maxChrono /= musicManager.selectedMusic.baisseDivision;
+
+            chrono = maxChrono;
 
             if (boss.bossEnCours)
             {
                 boss.paternBossAttack();
             }
-
-
         }
 
         // Auglentation de la vitesse des obstacles au fur et à mesure du jeu

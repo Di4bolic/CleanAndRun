@@ -28,6 +28,7 @@ public class EndManager : MonoBehaviour
 
     public void GoMenu()
     {
+        Destroy(GameObject.Find("Manager"));
         SceneManager.LoadScene("MenuScene");
     }
 
