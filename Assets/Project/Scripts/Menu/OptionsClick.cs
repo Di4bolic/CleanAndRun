@@ -5,20 +5,12 @@ using UnityEngine;
 public class OptionsClick : MonoBehaviour
 {
     public GameObject optionsButtons;
-    public GameObject menuButtons1;
-    public GameObject menuButtons2;
 
     bool isActive = false;
     bool isMoving = false;
 
     Vector3 newPosOptionsButtons;
     Vector3 oldPosOptionsButtons;
-
-    Vector3 newPosMenuButtons1;
-    Vector3 oldPosMenuButtons1;
-
-    Vector3 newPosMenuButtons2;
-    Vector3 oldPosMenuButtons2;
 
     bool doMove = false;
 
@@ -37,8 +29,6 @@ public class OptionsClick : MonoBehaviour
         if (doMove)
         {
             optionsButtons.transform.position = Vector3.Lerp(oldPosOptionsButtons, newPosOptionsButtons, pourcentage);
-            menuButtons1.transform.position = Vector3.Lerp(oldPosMenuButtons1, newPosMenuButtons1, pourcentage);
-            menuButtons2.transform.position = Vector3.Lerp(oldPosMenuButtons2, newPosMenuButtons2, pourcentage);
             pourcentage += speed;
             speed /= 1.05f;
 
@@ -66,20 +56,14 @@ public class OptionsClick : MonoBehaviour
         if (isMoving == false)
         {
             oldPosOptionsButtons = optionsButtons.transform.position;
-            oldPosMenuButtons1 = menuButtons1.transform.position;
-            oldPosMenuButtons2 = menuButtons2.transform.position;
 
             if (isActive)
             {
                 newPosOptionsButtons = optionsButtons.transform.position + new Vector3(0, 300, 0);
-                newPosMenuButtons1 = menuButtons1.transform.position + new Vector3(300, 0, 0);
-                newPosMenuButtons2 = menuButtons2.transform.position + new Vector3(300, 0, 0);
             }
             else
             {
                 newPosOptionsButtons = optionsButtons.transform.position + new Vector3(0, -300, 0);
-                newPosMenuButtons1 = menuButtons1.transform.position + new Vector3(-300, 0, 0);
-                newPosMenuButtons2 = menuButtons2.transform.position + new Vector3(-300, 0, 0);
             }
 
             doMove = true;

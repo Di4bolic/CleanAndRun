@@ -7,23 +7,23 @@ public class ObstacleManager : MonoBehaviour
 {
     public MusicManager musicManager;
 
-    // Liste Spawn 1
-    public List<GameObject> obstacles0;
-    public List<GameObject> obstaclesGarbages0;
+    // Liste difficulté 1
+    public List<GameObject> obstaclesEasy;
+    public List<GameObject> obstaclesGarbagesEasy;
 
-    // Liste Spawn 2
-    public List<GameObject> obstacles1;
-    public List<GameObject> obstaclesGarbages1;
+    // Liste difficulté 2
+    public List<GameObject> obstaclesMedium;
+    public List<GameObject> obstaclesGarbagesMedium;
 
-    // Liste Spawn 3
-    public List<GameObject> obstacles2;
-    public List<GameObject> obstaclesGarbages2;
-    //public Animator animator;
+    // Liste difficulté 3
+    public List<GameObject> obstaclesHard;
+    public List<GameObject> obstaclesGarbagesHard;
+
     // Les listes qui vont servir de conteneurs pour les listes de spawn aléatoire
     List<GameObject> obstacles;
     List<GameObject> obstaclesGarbages;
 
-    public List<GameObject> spawnPoints;
+    public GameObject spawnPoint;
 
     float chrono;
     float maxChrono;
@@ -32,8 +32,6 @@ public class ObstacleManager : MonoBehaviour
 
     int randomObstacle;
     int randomObstacleSave;
-    int randomSpawn;
-    int randomSpawnSave;
 
     int dansCombienUnGarbage;
 
@@ -42,10 +40,25 @@ public class ObstacleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //animator.SetTrigger("");
+        // Définition de la liste d'obstacle en fonction de la difficulté
+        if (musicManager.selectedMusic.difficulty == "Easy")
+        {
+            obstacles = obstaclesEasy;
+            obstaclesGarbages = obstaclesGarbagesEasy;
+        }
+        else if (musicManager.selectedMusic.difficulty == "Medium")
+        {
+            obstacles = obstaclesMedium;
+            obstaclesGarbages = obstaclesGarbagesMedium;
+        }
+        else
+        {
+            obstacles = obstaclesHard;
+            obstaclesGarbages = obstaclesGarbagesHard;
+        }
         maxChrono = musicManager.interval;
         chrono = maxChrono;
-        dansCombienUnGarbage = Random.Range(4, 8);
+        dansCombienUnGarbage = Random.Range(1, 2);
 
         speed = musicManager.selectedMusic.startSpeed;
     }
@@ -65,7 +78,7 @@ public class ObstacleManager : MonoBehaviour
             if (dansCombienUnGarbage == 0)
             {
                 SpawnObstacleGarbage();
-                dansCombienUnGarbage = Random.Range(4, 8);
+                dansCombienUnGarbage = Random.Range(1, 2);
             }
             else
             {
@@ -102,26 +115,6 @@ public class ObstacleManager : MonoBehaviour
 
     void SpawnObstacle()
     {
-        randomSpawn = Random.Range(0, spawnPoints.Count);
-        while (randomSpawn == randomSpawnSave)
-        {
-            randomSpawn = Random.Range(0, spawnPoints.Count);
-        }
-        randomSpawnSave = randomSpawn;
-
-        if (randomSpawn == 0)
-        {
-            obstacles = obstacles0;
-        }
-        else if (randomSpawn == 1)
-        {
-            obstacles = obstacles1;
-        }
-        else
-        {
-            obstacles = obstacles2;
-        }
-
         randomObstacle = Random.Range(0, obstacles.Count);
         while (randomObstacle == randomObstacleSave)
         {
@@ -129,31 +122,11 @@ public class ObstacleManager : MonoBehaviour
         }
         randomObstacleSave = randomObstacle;
 
-        Instantiate(obstacles[randomObstacle], spawnPoints[randomSpawn].transform.position, Quaternion.identity);
+        Instantiate(obstacles[randomObstacle], spawnPoint.transform.position, Quaternion.identity);
     }
 
     void SpawnObstacleGarbage()
-    {
-        randomSpawn = Random.Range(0, spawnPoints.Count);
-        while (randomSpawn == randomSpawnSave)
-        {
-            randomSpawn = Random.Range(0, spawnPoints.Count);
-        }
-        randomSpawnSave = randomSpawn;
-
-        if (randomSpawn == 0)
-        {
-            obstaclesGarbages = obstaclesGarbages0;
-        }
-        else if (randomSpawn == 1)
-        {
-            obstaclesGarbages = obstaclesGarbages1;
-        }
-        else
-        {
-            obstaclesGarbages = obstaclesGarbages2;
-        }
-
+    {        
         randomObstacle = Random.Range(0, obstaclesGarbages.Count);
         while (randomObstacle == randomObstacleSave)
         {
@@ -161,6 +134,6 @@ public class ObstacleManager : MonoBehaviour
         }
         randomObstacleSave = randomObstacle;
 
-        Instantiate(obstaclesGarbages[randomObstacle], spawnPoints[randomSpawn].transform.position, Quaternion.identity);
+        Instantiate(obstaclesGarbages[randomObstacle], spawnPoint.transform.position, Quaternion.identity);
     }
 }
