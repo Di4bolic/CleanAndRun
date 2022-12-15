@@ -44,6 +44,7 @@ public class Pause : MonoBehaviour
 
     public void Menu()
     {
+        Destroy(GameObject.Find("Manager"));
         Time.timeScale = 1;
         SceneManager.LoadScene("MenuScene");
     }

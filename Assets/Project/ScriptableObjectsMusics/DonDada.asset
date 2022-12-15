@@ -18,3 +18,5 @@ MonoBehaviour:
   startSpeed: 8
   endSpeed: 16
   difficulty: Hard
+  baisseDivision: 1.005
+  titre: Don Dada

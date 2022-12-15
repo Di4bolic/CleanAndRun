@@ -18,6 +18,8 @@ public class EndManager : MonoBehaviour
 
         garbagesScoreTotal.text = "Nombre de déchets récoltés : " + mM.recoltedGarbages.ToString();
         bossScoreTotal.text = "Nombre de boss éliminés : " + mM.nbrBossKilled.ToString();
+
+        Destroy(GameObject.Find("Manager"));
     }
 
     // Update is called once per frame
