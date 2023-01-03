@@ -21,7 +21,7 @@ public class OptionsClick : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        optionsButtons.transform.position += new Vector3(0, 800, 0);
+        optionsButtons.transform.position += new Vector3(0, 1200, 0);
     }
 
     // Update is called once per frame
@@ -60,12 +60,12 @@ public class OptionsClick : MonoBehaviour
 
             if (isActive)
             {
-                newPosOptionsButtons = optionsButtons.transform.position + new Vector3(0, 800, 0);
+                newPosOptionsButtons = optionsButtons.transform.position + new Vector3(0, 1200, 0);
                 maskGris.SetActive(false);
             }
             else
             {
-                newPosOptionsButtons = optionsButtons.transform.position + new Vector3(0, -800, 0);
+                newPosOptionsButtons = optionsButtons.transform.position + new Vector3(0, -1200, 0);
                 maskGris.SetActive(true);
             }
 

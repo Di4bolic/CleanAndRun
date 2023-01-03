@@ -21,7 +21,7 @@ public class CreditsClick : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        creditsButtons.transform.position += new Vector3(0, 800, 0);
+        creditsButtons.transform.position += new Vector3(0, 1200, 0);
     }
 
     // Update is called once per frame
@@ -60,12 +60,12 @@ public class CreditsClick : MonoBehaviour
 
             if (isActive)
             {
-                newPosCreditsButtons = creditsButtons.transform.position + new Vector3(0, 800, 0);
+                newPosCreditsButtons = creditsButtons.transform.position + new Vector3(0, 1200, 0);
                 maskGris.SetActive(false);
             }
             else
             {
-                newPosCreditsButtons = creditsButtons.transform.position + new Vector3(0, -800, 0);
+                newPosCreditsButtons = creditsButtons.transform.position + new Vector3(0, -1200, 0);
                 maskGris.SetActive(true);
             }
 

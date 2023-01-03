@@ -22,7 +22,7 @@ public class PlayClick : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        musicsButtons.transform.position += new Vector3(0, 800, 0);
+        musicsButtons.transform.position += new Vector3(0, 1200, 0);
     }
 
     // Update is called once per frame
@@ -61,12 +61,12 @@ public class PlayClick : MonoBehaviour
 
             if (isActive)
             {
-                newPosMusicsButtons = musicsButtons.transform.position + new Vector3(0, 800, 0);
+                newPosMusicsButtons = musicsButtons.transform.position + new Vector3(0, 1200, 0);
                 maskGris.SetActive(false);
             }
             else
             {
-                newPosMusicsButtons = musicsButtons.transform.position + new Vector3(0, -800, 0);
+                newPosMusicsButtons = musicsButtons.transform.position + new Vector3(0, -1200, 0);
                 maskGris.SetActive(true);
             }
 
