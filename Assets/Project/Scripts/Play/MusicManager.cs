@@ -10,6 +10,7 @@ public class MusicManager : MonoBehaviour
     public List<Music> musics;
     public Music selectedMusic;
 
+    public float lengthMusic;
     public float interval;
     public string difficulty;
 
@@ -21,9 +22,11 @@ public class MusicManager : MonoBehaviour
         audioSource.clip = selectedMusic.music;
         audioSource.Play(0);
 
-        interval = (60f / selectedMusic.bpm)*10;
+        interval = (60f / selectedMusic.bpm)*12;
 
         difficulty = selectedMusic.difficulty;
+
+        lengthMusic = selectedMusic.lenght;
     }
 
     // Start is called before the first frame update

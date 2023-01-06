@@ -84,7 +84,7 @@ public class ObstacleManager : MonoBehaviour
             }
 
             // Augmentation de pourcentage
-            pourcentage += 1 / (musicManager.selectedMusic.lengh / maxChrono);
+            pourcentage += 1 / (musicManager.selectedMusic.lenght / maxChrono);
 
             chrono = maxChrono;
 
@@ -133,5 +133,13 @@ public class ObstacleManager : MonoBehaviour
         randomObstacleSave = randomObstacle;
 
         Instantiate(obstaclesGarbages[randomObstacle], spawnPoint.transform.position, Quaternion.identity);
+    }
+
+    void SpawnAllLevel()
+    {
+        for (int i = 0; i < (musicManager.lengthMusic/maxChrono); i++)
+        {
+
+        }
     }
 }
