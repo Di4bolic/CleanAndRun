@@ -16,7 +16,7 @@ public class OptionsClick : MonoBehaviour
     bool doMove = false;
 
     float pourcentage;
-    float speed = 0.05f;
+    float speed = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,7 @@ public class OptionsClick : MonoBehaviour
         {
             optionsButtons.transform.position = Vector3.Lerp(oldPosOptionsButtons, newPosOptionsButtons, pourcentage);
             pourcentage += speed;
-            speed /= 1.05f;
+            speed /= 1.001f;
 
             if (pourcentage >= 1)
             {

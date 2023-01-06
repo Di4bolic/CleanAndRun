@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
     }   
 
     public void JumpPlayer(){
-        if (Input.touchCount >= 1 && cooldownSaut == false && nbSaut > 0 && Time.time > stunEnCours)
+        if (cooldownSaut == false && nbSaut > 0 && Time.time > stunEnCours)
         {
             cooldownSaut = true;
             nbSaut = nbSaut - 1;

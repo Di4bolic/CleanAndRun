@@ -12,7 +12,6 @@ public class MusicManager : MonoBehaviour
 
     public float interval;
     public string difficulty;
-    public float baisseDivision;
 
     // Awake is called before Start
     void Awake()
@@ -22,11 +21,9 @@ public class MusicManager : MonoBehaviour
         audioSource.clip = selectedMusic.music;
         audioSource.Play(0);
 
-        interval = (60f / selectedMusic.bpm);
+        interval = (60f / selectedMusic.bpm)*10;
 
         difficulty = selectedMusic.difficulty;
-
-        baisseDivision = selectedMusic.baisseDivision;
     }
 
     // Start is called before the first frame update

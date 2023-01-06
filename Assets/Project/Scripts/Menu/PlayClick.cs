@@ -16,7 +16,7 @@ public class PlayClick : MonoBehaviour
     bool doMove = false;
 
     float pourcentage;
-    float speed = 0.05f;
+    float speed = 0.1f;
 
     // Start is called before the first frame update
     // Start is called before the first frame update
@@ -32,7 +32,7 @@ public class PlayClick : MonoBehaviour
         {
             musicsButtons.transform.position = Vector3.Lerp(oldPosMusicsButtons, newPosMusicsButtons, pourcentage);
             pourcentage += speed;
-            speed /= 1.05f;
+            speed /= 1.001f;
 
             if (pourcentage >= 1)
             {

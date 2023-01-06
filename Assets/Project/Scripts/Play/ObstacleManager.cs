@@ -27,10 +27,8 @@ public class ObstacleManager : MonoBehaviour
 
     float chrono;
     float maxChrono;
-    public float maxChronoModif;
     public float speed;
     public float pourcentage = 0f;
-    public float division = 15f;
 
     int randomObstacle;
     int randomObstacleSave;
@@ -58,7 +56,7 @@ public class ObstacleManager : MonoBehaviour
             obstacles = obstaclesHard;
             obstaclesGarbages = obstaclesGarbagesHard;
         }
-        maxChrono = musicManager.interval * division;
+        maxChrono = musicManager.interval;
         chrono = maxChrono;
         dansCombienUnGarbage = Random.Range(1, 2);
 
@@ -87,9 +85,6 @@ public class ObstacleManager : MonoBehaviour
 
             // Augmentation de pourcentage
             pourcentage += 1 / (musicManager.selectedMusic.lengh / maxChrono);
-
-            // Augmentation de la fr�quence de spawn
-            maxChrono /= musicManager.selectedMusic.baisseDivision;
 
             chrono = maxChrono;
 

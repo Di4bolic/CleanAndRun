@@ -16,7 +16,7 @@ public class CreditsClick : MonoBehaviour
     bool doMove = false;
 
     float pourcentage;
-    float speed = 0.05f;
+    float speed = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,7 @@ public class CreditsClick : MonoBehaviour
         {
             creditsButtons.transform.position = Vector3.Lerp(oldPosCreditsButtons, newPosCreditsButtons, pourcentage);
             pourcentage += speed;
-            speed /= 1.05f;
+            speed /= 1.001f;
 
             if (pourcentage >= 1)
             {

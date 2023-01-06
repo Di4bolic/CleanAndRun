@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MoveProjectil : MonoBehaviour
 {
-    float projectilSpeed = 15f;
     float rotationSpeed = 300f;
     public Rigidbody m_Rigidbody;
     public float m_Thrustx = 0.01f;
