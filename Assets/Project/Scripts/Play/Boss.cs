@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
+    public ManagerManager mM;
+
     public Transform thierry;
     public Player player;
     public bool bossEnCours=false;
@@ -35,7 +37,8 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        // Trouve le mM
+        mM = FindObjectOfType<ManagerManager>();
     }
 
     // Update is called once per frame
@@ -51,6 +54,7 @@ public class Boss : MonoBehaviour
 
             respawnEnCours = Time.time + respawnDelay;
             NbBossTue=NbBossTue+1;
+            mM.nbrBossKilled = NbBossTue;
         }
 
         if (bossEnCours == true)
@@ -76,7 +80,7 @@ public class Boss : MonoBehaviour
         {
             vieBoss = 100;
             barreVieFill.fillAmount = 1f;
-            thierry.position = new Vector3(6, -4, 0);
+            thierry.position = new Vector3(3, -4, 0);
             bossEnCours = true;
             munBoss = munBoss + player.NbDechetColl;
             barreVieFill2.SetActive(true);
