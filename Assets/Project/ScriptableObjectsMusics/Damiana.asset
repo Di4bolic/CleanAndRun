@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d99f30f2a79fb0348bf2b2785fda520d, type: 3}
-  m_Name: TropPris
+  m_Name: Damiana
   m_EditorClassIdentifier: 
-  music: {fileID: 8300000, guid: eb3380721344c394ead94f31aa72360f, type: 3}
-  bpm: 101
-  lenght: 178
-  startSpeed: 4
-  endSpeed: 8
-  difficulty: Easy
-  titre: Trop Pris
+  music: {fileID: 8300000, guid: b4f1d401c34cf2246905d31c0744b326, type: 3}
+  bpm: 172
+  lenght: 154
+  startSpeed: 5
+  endSpeed: 10
+  difficulty: Medium
+  titre: Damiana

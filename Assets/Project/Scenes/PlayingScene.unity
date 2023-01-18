@@ -3036,10 +3036,9 @@ MonoBehaviour:
   - {fileID: 1946992632581319298, guid: df0d96523ab65c646aa4ca9579aca029, type: 3}
   - {fileID: 6486887152242001381, guid: 1511e81b616952e409daa351d28ea98e, type: 3}
   spawnPoint: {fileID: 633614173}
-  maxChronoModif: 0
+  decalage: 0
   speed: 0
   pourcentage: 0
-  division: 15
   boss: {fileID: 403499710}
 --- !u!4 &1474454773
 Transform:
@@ -3215,11 +3214,12 @@ MonoBehaviour:
   audioSource: {fileID: 1546816445}
   musics:
   - {fileID: 11400000, guid: 14a2a1539657b12458c608756d43391a, type: 2}
-  - {fileID: 11400000, guid: 388e876b59afa114484c31fb0f78cf38, type: 2}
+  - {fileID: 11400000, guid: 1fda1ab5f16e4394686318356de285f4, type: 2}
+  - {fileID: 11400000, guid: 404208ce75b6a204babc280a8da5acfa, type: 2}
   selectedMusic: {fileID: 0}
+  lengthMusic: 0
   interval: 0
   difficulty: 
-  baisseDivision: 0
 --- !u!1 &1567438919
 GameObject:
   m_ObjectHideFlags: 0
