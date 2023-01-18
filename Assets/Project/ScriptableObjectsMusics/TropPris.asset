@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music: {fileID: 8300000, guid: eb3380721344c394ead94f31aa72360f, type: 3}
   bpm: 101
-  lengh: 179
+  lenght: 178
   startSpeed: 4
   endSpeed: 12
   difficulty: Easy
-  baisseDivision: 1.03
   titre: Trop Pris

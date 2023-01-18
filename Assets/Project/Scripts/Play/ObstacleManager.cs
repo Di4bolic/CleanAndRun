@@ -24,6 +24,7 @@ public class ObstacleManager : MonoBehaviour
     List<GameObject> obstaclesGarbages;
 
     public GameObject spawnPoint;
+    public float decalage = 0f;
 
     float chrono;
     float maxChrono;
@@ -56,32 +57,30 @@ public class ObstacleManager : MonoBehaviour
             obstacles = obstaclesHard;
             obstaclesGarbages = obstaclesGarbagesHard;
         }
+
+        // Chrono
         maxChrono = musicManager.interval;
         chrono = maxChrono;
-        dansCombienUnGarbage = Random.Range(1, 2);
 
+        // Vitesse
         speed = musicManager.selectedMusic.startSpeed;
+
+        // Construction du level
+        SpawnAllLevel();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // debug
+        Debug.Log("Voici l'avancement du level : " + pourcentage);
+
         if (chrono > 0)
         {
             chrono -= Time.deltaTime;
         }
         else
         {
-            dansCombienUnGarbage --;
-            if (dansCombienUnGarbage == 0)
-            {
-                SpawnObstacleGarbage();
-                dansCombienUnGarbage = Random.Range(1, 2);
-            }
-            else
-            {
-                SpawnObstacle();
-            }
 
             // Augmentation de pourcentage
             pourcentage += 1 / (musicManager.selectedMusic.lenght / maxChrono);
@@ -93,9 +92,6 @@ public class ObstacleManager : MonoBehaviour
                 boss.paternBossAttack();
             }
         }
-
-        // Auglentation de la vitesse des obstacles au fur et � mesure du jeu
-        speed = Mathf.Lerp(musicManager.selectedMusic.startSpeed, musicManager.selectedMusic.endSpeed, pourcentage);
 
         // Si la musique est finie
         if (pourcentage >= 1)
@@ -111,7 +107,7 @@ public class ObstacleManager : MonoBehaviour
 
     }
 
-    void SpawnObstacle()
+    void SpawnObstacle(float _decalage)
     {
         randomObstacle = Random.Range(0, obstacles.Count);
         while (randomObstacle == randomObstacleSave)
@@ -120,10 +116,10 @@ public class ObstacleManager : MonoBehaviour
         }
         randomObstacleSave = randomObstacle;
 
-        Instantiate(obstacles[randomObstacle], spawnPoint.transform.position, Quaternion.identity);
+        Instantiate(obstacles[randomObstacle], spawnPoint.transform.position + new Vector3(_decalage, 0, 0), Quaternion.identity);
     }
 
-    void SpawnObstacleGarbage()
+    void SpawnObstacleGarbage(float _decalage)
     {        
         randomObstacle = Random.Range(0, obstaclesGarbages.Count);
         while (randomObstacle == randomObstacleSave)
@@ -132,14 +128,23 @@ public class ObstacleManager : MonoBehaviour
         }
         randomObstacleSave = randomObstacle;
 
-        Instantiate(obstaclesGarbages[randomObstacle], spawnPoint.transform.position, Quaternion.identity);
+        Instantiate(obstaclesGarbages[randomObstacle], spawnPoint.transform.position + new Vector3(_decalage, 0, 0), Quaternion.identity);
     }
 
     void SpawnAllLevel()
     {
         for (int i = 0; i < (musicManager.lengthMusic/maxChrono); i++)
         {
-
+            SpawnObstacle(decalage);
+            // Décalage de la taille des obstacles
+            decalage += 18f;
+            // Décalage de l'espace entre les obstacles
+            decalage += 18f;
+            SpawnObstacleGarbage(decalage);
+            // Décalage de la taille des obstacles
+            decalage += 18f;
+            // Décalage de l'espace entre les obstacles
+            decalage += 18f;
         }
     }
 }

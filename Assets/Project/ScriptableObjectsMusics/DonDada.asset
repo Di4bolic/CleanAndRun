@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music: {fileID: 8300000, guid: c6ef118d89a766f48939ca9048d23347, type: 3}
   bpm: 175
-  lengh: 225
+  lenght: 224
   startSpeed: 8
   endSpeed: 16
   difficulty: Hard
-  baisseDivision: 1.01
   titre: Don Dada
