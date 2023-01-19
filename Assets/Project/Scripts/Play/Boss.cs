@@ -93,7 +93,7 @@ public class Boss : MonoBehaviour
     public void paternBossAttack()
     {
         this.GetComponent<Animator>().Play("BossAttack");
-        var newTransform = thierry.position + new Vector3(1, 3, 0);
+        var newTransform = new Vector3(thierry.position.x+1, player.transform.position.y, thierry.position.z);
         Instantiate(vomiBoss, newTransform, Quaternion.identity);
         animator.SetTrigger("finAttack");
     }

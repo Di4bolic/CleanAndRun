@@ -21,10 +21,10 @@ public class Shoot : MonoBehaviour
     public void tirJoueur(){
         if (player.munitionsScore > 0 && player.stun==false)
         {
-            var newTransform = transform.position + new Vector3(0, 2, 0);
+            var newTransform = transform.position + new Vector3(1.5f, 1.5f, 0);
             Instantiate(projectil, newTransform, Quaternion.identity);
             player.munitionsScore--;
-            player.munitions.text = "Munitions :" + player.munitionsScore.ToString();
+            player.munitions.text = player.munitionsScore.ToString();
         }
     }
     

@@ -93,6 +93,9 @@ public class ObstacleManager : MonoBehaviour
             }
         }
 
+        // Augmentation de la vitesse
+        speed = Mathf.Lerp(musicManager.selectedMusic.startSpeed, musicManager.selectedMusic.endSpeed, pourcentage);
+
         // Si la musique est finie
         if (pourcentage >= 1)
         {
@@ -133,7 +136,7 @@ public class ObstacleManager : MonoBehaviour
 
     void SpawnAllLevel()
     {
-        for (int i = 0; i < (musicManager.lengthMusic/maxChrono); i++)
+        for (int i = 0; i < (musicManager.lengthMusic/maxChrono-1); i++)
         {
             SpawnObstacle(decalage);
             // Décalage de la taille des obstacles

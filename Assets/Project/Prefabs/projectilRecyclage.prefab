@@ -129,5 +129,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Rigidbody: {fileID: 3004024560028579902}
-  m_Thrustx: 20
-  m_Thrusty: 8
+  m_Thrustx: 35
+  m_Thrusty: 15

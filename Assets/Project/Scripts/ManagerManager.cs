@@ -5,6 +5,7 @@ using UnityEngine;
 public class ManagerManager : MonoBehaviour
 {
     public int selectedMusicIndex;
+    public bool leftHanded;
     public int recoltedGarbages;
     public int nbrBossKilled;
 

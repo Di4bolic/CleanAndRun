@@ -6,6 +6,22 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
+    // Transform of the GameObject you want to shake
+    public Transform transformCam;
+
+    // Desired duration of the shake effect
+    private float shakeDuration = 0f;
+
+    // A measure of magnitude for the shake. Tweak based on your preference
+    private float shakeMagnitude = 0.5f;
+
+    // A measure of how quickly the shake effect should evaporate
+    private float dampingSpeed = 1.0f;
+
+    // The initial position of the GameObject
+    Vector3 initialPosition;
+
+
     // Manager Manager
     public ManagerManager mM;
 
@@ -35,6 +51,19 @@ public class Player : MonoBehaviour
     public Sprite newSpriteSaut1;
     public Sprite newSpriteSaut2;
 
+    void Awake()
+    {
+        if (transformCam == null)
+        {
+            transformCam = GetComponent(typeof(Transform)) as Transform;
+        }
+    }
+
+    void OnEnable()
+    {
+        initialPosition = transformCam.localPosition;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +77,20 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (shakeDuration > 0)
+        {
+            transformCam.localPosition = initialPosition + Random.insideUnitSphere * shakeMagnitude;
+
+            shakeDuration -= Time.deltaTime * dampingSpeed;
+        }
+        else
+        {
+            shakeDuration = 0f;
+            transformCam.localPosition = initialPosition;
+        }
+
+
+
         if (Input.touchCount == 0 && cooldownSaut == true)
         {
             cooldownSaut = false;
@@ -76,6 +119,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Obstacle"))
         {
+            shakeDuration = 0.2f;
             stun = true;
             stunEnCours = Time.time + stunDelay;
 
@@ -92,8 +136,8 @@ public class Player : MonoBehaviour
             // Gestion UI
             garbagesScore++;
             munitionsScore += 3;
-            garbages.text = "Garbages : " + garbagesScore.ToString();
-            munitions.text = "Munitions : " + munitionsScore.ToString();
+            garbages.text = garbagesScore.ToString();
+            munitions.text = munitionsScore.ToString();
 
             // Nombre de déchêts mis à jour dans le mM
             mM.recoltedGarbages = garbagesScore;
