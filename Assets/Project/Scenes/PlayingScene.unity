@@ -3233,7 +3233,7 @@ MonoBehaviour:
   munitionsScore: 0
   thierry: {fileID: 1586408247}
   m_Rigidbody: {fileID: 1586408244}
-  m_Thrust: 50
+  m_Thrust: 150
   clicBouton: {fileID: 0}
   stun: 0
   stunDelay: 1
