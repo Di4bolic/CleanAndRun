@@ -107,7 +107,12 @@ public class ObstacleManager : MonoBehaviour
         {
             boss.ViewBoss();
         }
-        
+
+        if (pourcentage >= 0.6 && boss.bossEnCours == false)
+        {
+            boss.SpawnBoss();
+        }
+
         if (musicManager.selectedMusic.difficulty == "Easy" || musicManager.selectedMusic.difficulty == "Medium")
         {
             if (pourcentage >= 0.2 && boss.nbEncounter == 0)
