@@ -142,6 +142,15 @@ public class Player : MonoBehaviour
             // Nombre de déchêts mis à jour dans le mM
             mM.recoltedGarbages = garbagesScore;
         }
+
+        if (other.gameObject.CompareTag("ProjectilThunder"))
+        {
+            Destroy(other.gameObject);
+            // Gestion UI
+            munitionsScore = 0 ;
+            munitions.text = munitionsScore.ToString();
+
+        }
     }   
 
     public void JumpPlayer(){

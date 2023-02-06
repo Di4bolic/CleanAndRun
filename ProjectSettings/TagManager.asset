@@ -13,6 +13,7 @@ TagManager:
   - Projectil
   - Tolerance
   - Pieds
+  - ProjectilThunder
   layers:
   - Default
   - TransparentFX

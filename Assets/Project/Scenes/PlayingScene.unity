@@ -620,6 +620,7 @@ MonoBehaviour:
   barreVieFond: {fileID: 610232408}
   barreVieAffichage: {fileID: 692588882}
   vomiBoss: {fileID: 5786720125797268578, guid: cbcabdb8028db4d4087637cb55f608f3, type: 3}
+  vomiBossEclair: {fileID: 5786720125797268578, guid: b02bf3ef9cb14784a97d0ab67bd4cec7, type: 3}
   om: {fileID: 1474454772}
   respawnEnCours: -1
   respawnDelay: 2
@@ -627,6 +628,7 @@ MonoBehaviour:
   animator: {fileID: 403499712}
   NbBossTue: 0
   damage: 5
+  nbEncounter: 0
 --- !u!65 &403499711
 BoxCollider:
   m_ObjectHideFlags: 0

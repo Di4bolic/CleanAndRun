@@ -13,8 +13,8 @@ public class Boss : MonoBehaviour
     public bool stun = false;
     public float stunDelay = 1f;
     public float stunEnCours = -1f;
-    public int vieBoss;
-    public int vieBossInitiale;
+    public float vieBoss;
+    public float vieBossInitiale;
     public int munBoss = 0;
 
     public Image barreVieFill;
@@ -24,6 +24,7 @@ public class Boss : MonoBehaviour
     public GameObject barreVieAffichage;
 
     public GameObject vomiBoss;
+    public GameObject vomiBossEclair;
 
     public ObstacleManager om;
     public float respawnEnCours = -1f;
@@ -35,6 +36,8 @@ public class Boss : MonoBehaviour
     public int NbBossTue=0;
 
     public int damage;
+
+    public int nbEncounter=0;
 
 
     // Start is called before the first frame update
@@ -72,7 +75,8 @@ public class Boss : MonoBehaviour
         {
            vieBoss = vieBoss-damage;
            Destroy(other.gameObject);
-           barreVieFill.fillAmount = barreVieFill.fillAmount - (damage * 100 / vieBossInitiale)/100;
+           barreVieFill.fillAmount = vieBoss / 100;
+           //barreVieFill.fillAmount - (damage * 100 / vieBossInitiale)/100;
         }
     }
 
@@ -94,11 +98,37 @@ public class Boss : MonoBehaviour
         }
     }
 
+    public void HideBoss()
+    {
+        thierry.position = new Vector3(11, 30, 0);
+        bossEnCours = true;
+        barreVieFill2.SetActive(false);
+        barreVieCadre.SetActive(false);
+        barreVieFond.SetActive(false);
+    }
+
+    public void ViewBoss()
+    {
+        thierry.position = new Vector3(3, -4, 0);
+        barreVieFill2.SetActive(true);
+        barreVieCadre.SetActive(true);
+        barreVieFond.SetActive(true);
+        this.GetComponent<Animator>().Play("BossIdle");
+    }
+
     public void paternBossAttack()
     {
         this.GetComponent<Animator>().Play("BossAttack");
         var newTransform = new Vector3(thierry.position.x+1, player.transform.position.y, thierry.position.z);
         Instantiate(vomiBoss, newTransform, Quaternion.identity);
+        animator.SetTrigger("finAttack");
+    }
+
+    public void paternBossAttackEclair()
+    {
+        this.GetComponent<Animator>().Play("BossAttack");
+        var newTransform = new Vector3(thierry.position.x + 1, player.transform.position.y, thierry.position.z);
+        Instantiate(vomiBossEclair, newTransform, Quaternion.identity);
         animator.SetTrigger("finAttack");
     }
 }

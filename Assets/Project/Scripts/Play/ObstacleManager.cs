@@ -87,7 +87,7 @@ public class ObstacleManager : MonoBehaviour
 
             chrono = maxChrono;
 
-            if (boss.bossEnCours)
+            if (boss.bossEnCours && pourcentage >= 0.6)
             {
                 boss.paternBossAttack();
             }
@@ -103,11 +103,63 @@ public class ObstacleManager : MonoBehaviour
         }
 
 
-        if (pourcentage >= 0.6 && boss.bossEnCours==false)
+        if (pourcentage >= 0.6 && boss.bossEnCours==true)
         {
-            boss.SpawnBoss();
+            boss.ViewBoss();
+        }
+        
+        if (musicManager.selectedMusic.difficulty == "Easy" || musicManager.selectedMusic.difficulty == "Medium")
+        {
+            if (pourcentage >= 0.2 && boss.nbEncounter == 0)
+            {
+                boss.SpawnBoss();
+                boss.nbEncounter++;
+                StartCoroutine(CoroutineTempBoss());
+            }
+
+            if (pourcentage >= 0.4 && boss.nbEncounter == 1)
+            {
+                boss.ViewBoss();
+                boss.nbEncounter++;
+                StartCoroutine(CoroutineTempBoss());
+            }
+        }
+        else if (musicManager.selectedMusic.difficulty == "Hard")
+        {
+            if (pourcentage >= 0.15 && boss.nbEncounter == 0)
+            {
+                boss.SpawnBoss();
+                boss.nbEncounter++;
+                StartCoroutine(CoroutineTempBoss());
+            }
+
+            if (pourcentage >= 0.30 && boss.nbEncounter == 1)
+            {
+                boss.ViewBoss();
+                boss.nbEncounter++;
+                StartCoroutine(CoroutineTempBoss());
+            }
+
+            if (pourcentage >= 0.45 && boss.nbEncounter == 2)
+            {
+                boss.ViewBoss();
+                boss.nbEncounter++;
+                StartCoroutine(CoroutineTempBoss());
+            }
         }
 
+    }
+
+    public IEnumerator CoroutineTempBoss()
+    {
+        yield return new WaitForSeconds(2);
+        boss.paternBossAttackEclair();
+
+        yield return new WaitForSeconds(2);
+        boss.paternBossAttackEclair();
+
+        yield return new WaitForSeconds(1);
+        boss.HideBoss();
     }
 
     void SpawnObstacle(float _decalage)
