@@ -13,7 +13,8 @@ public class Boss : MonoBehaviour
     public bool stun = false;
     public float stunDelay = 1f;
     public float stunEnCours = -1f;
-    public int vieBoss = 100;
+    public int vieBoss;
+    public int vieBossInitiale;
     public int munBoss = 0;
 
     public Image barreVieFill;
@@ -32,6 +33,8 @@ public class Boss : MonoBehaviour
     public Animator animator;
 
     public int NbBossTue=0;
+
+    public int damage;
 
 
     // Start is called before the first frame update
@@ -67,9 +70,9 @@ public class Boss : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         if (other.gameObject.CompareTag("Projectil"))
         {
-           vieBoss = vieBoss-5;
+           vieBoss = vieBoss-damage;
            Destroy(other.gameObject);
-           barreVieFill.fillAmount = barreVieFill.fillAmount - 0.05f;
+           barreVieFill.fillAmount = barreVieFill.fillAmount - (damage * 100 / vieBossInitiale)/100;
         }
     }
 
@@ -79,6 +82,7 @@ public class Boss : MonoBehaviour
         if(Time.time >= respawnEnCours)
         {
             vieBoss = 100;
+            vieBossInitiale = 100;
             barreVieFill.fillAmount = 1f;
             thierry.position = new Vector3(3, -4, 0);
             bossEnCours = true;

@@ -612,6 +612,7 @@ MonoBehaviour:
   stunDelay: 20
   stunEnCours: -1
   vieBoss: 100
+  vieBossInitiale: 100
   munBoss: 0
   barreVieFill: {fileID: 692588884}
   barreVieFill2: {fileID: 692588882}
@@ -625,6 +626,7 @@ MonoBehaviour:
   attackPatern1: 0
   animator: {fileID: 403499712}
   NbBossTue: 0
+  damage: 5
 --- !u!65 &403499711
 BoxCollider:
   m_ObjectHideFlags: 0
