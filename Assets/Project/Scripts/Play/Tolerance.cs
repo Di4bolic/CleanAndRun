@@ -15,11 +15,14 @@ public class Tolerance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = player.transform.position + new Vector3(1, 0.2f, 0);
     }
 
     private void OnTriggerStay(Collider other)
     {
-        player.transform.position += new Vector3(0, 0.1f, 0);
+        if (other.gameObject.tag != "Ground" && other.gameObject.tag != "Pieds" && other.gameObject.tag != "Projectile")
+        {
+            player.transform.position += new Vector3(0, 0.3f, 0);
+        }
     }
 }

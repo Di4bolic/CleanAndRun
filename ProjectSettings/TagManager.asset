@@ -11,6 +11,8 @@ TagManager:
   - Obstacle
   - Boss
   - Projectil
+  - Tolerance
+  - Pieds
   layers:
   - Default
   - TransparentFX
