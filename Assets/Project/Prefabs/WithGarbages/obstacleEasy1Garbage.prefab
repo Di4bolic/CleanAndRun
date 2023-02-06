@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2674666287120338045, guid: b58493b1e834acb41a20a2b78f771e02, type: 3}
       propertyPath: m_Name
-      value: obstacleEasy1
+      value: obstacleEasy1Garbage
       objectReference: {fileID: 0}
     - target: {fileID: 4717444496469241280, guid: b58493b1e834acb41a20a2b78f771e02, type: 3}
       propertyPath: m_RootOrder
@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4717444496469241280, guid: b58493b1e834acb41a20a2b78f771e02, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.63
       objectReference: {fileID: 0}
     - target: {fileID: 4717444496469241280, guid: b58493b1e834acb41a20a2b78f771e02, type: 3}
       propertyPath: m_LocalPosition.z
@@ -79,11 +79,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8200096028268934476, guid: 2d9baa6fe4d093c4aba8896ed2edeaf2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.547
+      value: 5.02
       objectReference: {fileID: 0}
     - target: {fileID: 8200096028268934476, guid: 2d9baa6fe4d093c4aba8896ed2edeaf2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.339
+      value: 0.94
       objectReference: {fileID: 0}
     - target: {fileID: 8200096028268934476, guid: 2d9baa6fe4d093c4aba8896ed2edeaf2, type: 3}
       propertyPath: m_LocalPosition.z
