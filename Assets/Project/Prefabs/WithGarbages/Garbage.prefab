@@ -4824,6 +4824,7 @@ GameObject:
   - component: {fileID: 7899137762718446284}
   - component: {fileID: 2057428633480938680}
   - component: {fileID: 676746161410474205}
+  - component: {fileID: 4988058557313116570}
   m_Layer: 0
   m_Name: Garbage
   m_TagString: Collectible
@@ -4925,3 +4926,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gM: {fileID: 0}
+--- !u!114 &4988058557313116570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5786720125797268578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 173720a1b41ada04aa72d4057f8d58c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sR: {fileID: 7899137762718446284}
+  listSprites:
+  - {fileID: 21300000, guid: 63ce7dbdfe22b3b499bbae274cb367de, type: 3}
+  - {fileID: 21300000, guid: d5c1f860c1de99144951117f7df85ab4, type: 3}
+  - {fileID: 21300000, guid: b860b38aeafa4e54aae20cb45252e971, type: 3}
+  - {fileID: 21300000, guid: 8c094b98197f3304daf6bfa21ff75324, type: 3}
+  - {fileID: 21300000, guid: 2194c61dc647f9942b8e78d20d4c996e, type: 3}

@@ -136,7 +136,7 @@ public class ObstacleManager : MonoBehaviour
 
     void SpawnAllLevel()
     {
-        for (int i = 0; i < (musicManager.lengthMusic/maxChrono-1); i++)
+        for (int i = 0; i < (musicManager.lengthMusic/maxChrono); i++)
         {
             SpawnObstacle(decalage);
             // Décalage de la taille des obstacles
