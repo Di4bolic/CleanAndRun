@@ -3298,6 +3298,7 @@ GameObject:
   - component: {fileID: 905108633}
   - component: {fileID: 905108632}
   - component: {fileID: 905108631}
+  - component: {fileID: 905108634}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -3369,19 +3370,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 905108632}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 302915012}
-        m_TargetAssemblyTypeName: PlayClick, Assembly-CSharp
-        m_MethodName: MoveMusicsButtons
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &905108632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3420,6 +3409,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905108629}
   m_CullTransparentMesh: 1
+--- !u!114 &905108634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905108629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0b1df337d1e4f49989d89c20882109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  calledWhenClicked:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 302915012}
+        m_TargetAssemblyTypeName: PlayClick, Assembly-CSharp
+        m_MethodName: MoveMusicsButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &943389752
 GameObject:
   m_ObjectHideFlags: 0
@@ -5199,6 +5215,7 @@ GameObject:
   - component: {fileID: 1906046305}
   - component: {fileID: 1906046304}
   - component: {fileID: 1906046303}
+  - component: {fileID: 1906046306}
   m_Layer: 5
   m_Name: Options
   m_TagString: Untagged
@@ -5270,19 +5287,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1906046304}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 302915015}
-        m_TargetAssemblyTypeName: OptionsClick, Assembly-CSharp
-        m_MethodName: MoveOptionsButtons
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1906046304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5321,6 +5326,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906046301}
   m_CullTransparentMesh: 1
+--- !u!114 &1906046306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906046301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0b1df337d1e4f49989d89c20882109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  calledWhenClicked:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 302915015}
+        m_TargetAssemblyTypeName: OptionsClick, Assembly-CSharp
+        m_MethodName: MoveOptionsButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1964070627
 GameObject:
   m_ObjectHideFlags: 0

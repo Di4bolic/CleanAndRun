@@ -2199,6 +2199,7 @@ GameObject:
   - component: {fileID: 982487486}
   - component: {fileID: 982487485}
   - component: {fileID: 982487484}
+  - component: {fileID: 982487487}
   m_Layer: 5
   m_Name: btnTir
   m_TagString: Untagged
@@ -2269,19 +2270,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 982487485}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1586408248}
-        m_TargetAssemblyTypeName: Shoot, Assembly-CSharp
-        m_MethodName: tirJoueur
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &982487485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2320,6 +2309,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982487482}
   m_CullTransparentMesh: 1
+--- !u!114 &982487487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982487482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0b1df337d1e4f49989d89c20882109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  calledWhenClicked:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1586408248}
+        m_TargetAssemblyTypeName: Shoot, Assembly-CSharp
+        m_MethodName: tirJoueur
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1058234187
 GameObject:
   m_ObjectHideFlags: 0
@@ -2717,6 +2733,7 @@ GameObject:
   - component: {fileID: 1317133661}
   - component: {fileID: 1317133660}
   - component: {fileID: 1317133659}
+  - component: {fileID: 1317133662}
   m_Layer: 5
   m_Name: btn_pause
   m_TagString: Untagged
@@ -2787,19 +2804,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1317133660}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1474454774}
-        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
-        m_MethodName: PauseGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1317133660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2838,6 +2843,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317133657}
   m_CullTransparentMesh: 1
+--- !u!114 &1317133662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317133657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0b1df337d1e4f49989d89c20882109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  calledWhenClicked:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1474454774}
+        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1321765936
 GameObject:
   m_ObjectHideFlags: 0
@@ -4135,8 +4167,8 @@ GameObject:
   - component: {fileID: 1739387696}
   - component: {fileID: 1739387699}
   - component: {fileID: 1739387698}
-  - component: {fileID: 1739387700}
   - component: {fileID: 1739387697}
+  - component: {fileID: 1739387700}
   m_Layer: 5
   m_Name: btnJump
   m_TagString: Untagged
@@ -4207,31 +4239,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1739387698}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1586408243}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: JumpPlayer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1739387700}
-        m_TargetAssemblyTypeName: Debugging, Assembly-CSharp
-        m_MethodName: Log
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Jump
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1739387698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4279,9 +4287,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1739387695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca2ba63e7c0a4ef4f86b21013f484dc2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c0b1df337d1e4f49989d89c20882109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  calledWhenClicked:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1586408243}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: JumpPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1741682632
 GameObject:
   m_ObjectHideFlags: 0
