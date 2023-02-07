@@ -4135,6 +4135,7 @@ GameObject:
   - component: {fileID: 1739387696}
   - component: {fileID: 1739387699}
   - component: {fileID: 1739387698}
+  - component: {fileID: 1739387700}
   - component: {fileID: 1739387697}
   m_Layer: 5
   m_Name: btnJump
@@ -4219,6 +4220,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1739387700}
+        m_TargetAssemblyTypeName: Debugging, Assembly-CSharp
+        m_MethodName: Log
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Jump
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1739387698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4257,6 +4270,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739387695}
   m_CullTransparentMesh: 1
+--- !u!114 &1739387700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739387695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2ba63e7c0a4ef4f86b21013f484dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1741682632
 GameObject:
   m_ObjectHideFlags: 0

@@ -2020,7 +2020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &574854456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2402,7 +2402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &659576815
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3135,6 +3135,8 @@ GameObject:
   - component: {fileID: 903302401}
   - component: {fileID: 903302400}
   - component: {fileID: 903302399}
+  - component: {fileID: 903302403}
+  - component: {fileID: 903302402}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -3206,19 +3208,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 903302400}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 302915016}
-        m_TargetAssemblyTypeName: CreditsClick, Assembly-CSharp
-        m_MethodName: MoveCreditsButtons
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &903302400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3257,6 +3247,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 903302397}
   m_CullTransparentMesh: 1
+--- !u!114 &903302402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903302397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0b1df337d1e4f49989d89c20882109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  calledWhenClicked:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 302915016}
+        m_TargetAssemblyTypeName: CreditsClick, Assembly-CSharp
+        m_MethodName: MoveCreditsButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button click perfect
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &903302403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903302397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2ba63e7c0a4ef4f86b21013f484dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &905108629
 GameObject:
   m_ObjectHideFlags: 0
