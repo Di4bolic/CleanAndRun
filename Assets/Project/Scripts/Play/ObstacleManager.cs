@@ -72,9 +72,6 @@ public class ObstacleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // debug
-        Debug.Log("Voici l'avancement du level : " + pourcentage);
-
         if (chrono > 0)
         {
             chrono -= Time.deltaTime;
