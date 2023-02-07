@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tolerance : MonoBehaviour
 {
     public Player player;
+    public ToleranceHead tH;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,10 @@ public class Tolerance : MonoBehaviour
     {
         if (other.gameObject.tag != "Ground" && other.gameObject.tag != "Pieds" && other.gameObject.tag != "Projectile")
         {
-            player.transform.position += new Vector3(0, 0.3f, 0);
+            if (!tH.inGroundContact)
+            {
+                player.transform.position += new Vector3(0, 0.3f, 0);
+            }            
         }
     }
 }
