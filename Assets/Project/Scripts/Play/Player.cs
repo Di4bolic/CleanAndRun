@@ -135,7 +135,7 @@ public class Player : MonoBehaviour
 
             // Gestion UI
             garbagesScore++;
-            munitionsScore += 3;
+            munitionsScore += 1;
             garbages.text = garbagesScore.ToString();
             munitions.text = munitionsScore.ToString();
 

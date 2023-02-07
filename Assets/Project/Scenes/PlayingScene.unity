@@ -627,7 +627,7 @@ MonoBehaviour:
   attackPatern1: 0
   animator: {fileID: 403499712}
   NbBossTue: 0
-  damage: 5
+  damage: 10
   nbEncounter: 0
 --- !u!65 &403499711
 BoxCollider:
