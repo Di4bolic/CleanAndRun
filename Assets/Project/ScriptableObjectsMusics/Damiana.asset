@@ -15,7 +15,7 @@ MonoBehaviour:
   music: {fileID: 8300000, guid: b4f1d401c34cf2246905d31c0744b326, type: 3}
   bpm: 172
   lenght: 154
-  startSpeed: 5
-  endSpeed: 10
+  startSpeed: 6
+  endSpeed: 12
   difficulty: Hard
   titre: Damiana

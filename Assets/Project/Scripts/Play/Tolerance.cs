@@ -21,7 +21,7 @@ public class Tolerance : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag != "Ground" && other.gameObject.tag != "Pieds" && other.gameObject.tag != "Projectile")
+        if (other.gameObject.tag != "Ground" && other.gameObject.tag != "Pieds" && other.gameObject.tag != "Projectile" && other.gameObject.tag != "Collectible")
         {
             if (!tH.inGroundContact)
             {

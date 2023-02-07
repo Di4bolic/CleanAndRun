@@ -15,7 +15,7 @@ MonoBehaviour:
   music: {fileID: 8300000, guid: 541b6c6814781f04480e98bcce7d4a1c, type: 3}
   bpm: 135
   lenght: 230
-  startSpeed: 6
-  endSpeed: 12
+  startSpeed: 5
+  endSpeed: 10
   difficulty: Medium
   titre: Can't See You

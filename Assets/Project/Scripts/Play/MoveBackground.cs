@@ -13,9 +13,6 @@ public class MoveBackground : MonoBehaviour
     private Vector3 oldPos;
 
     private float pourcentage = 0f;
-    private float speed = 0.001f;
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +25,6 @@ public class MoveBackground : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.Lerp(oldPos, finMove.position, pourcentage);
-        pourcentage += speed;
+        pourcentage += Time.deltaTime/lengthOfMusic;
     }
 }
