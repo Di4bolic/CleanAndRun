@@ -139,7 +139,7 @@ public class Player : MonoBehaviour
             garbages.text = garbagesScore.ToString();
             munitions.text = munitionsScore.ToString();
 
-            // Nombre de déchêts mis à jour dans le mM
+            // Nombre de dï¿½chï¿½ts mis ï¿½ jour dans le mM
             mM.recoltedGarbages = garbagesScore;
         }
 
@@ -147,7 +147,10 @@ public class Player : MonoBehaviour
         {
             Destroy(other.gameObject);
             // Gestion UI
-            munitionsScore = 0 ;
+            munitionsScore -= 3;
+            if(munitionsScore<0){
+                munitionsScore=0;
+            }
             munitions.text = munitionsScore.ToString();
 
         }
