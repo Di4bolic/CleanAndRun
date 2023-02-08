@@ -5326,7 +5326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oM: {fileID: 1474454772}
-  finMove: {fileID: 1988885337}
+  finMove: {fileID: 93362582}
 --- !u!1 &1806381212
 GameObject:
   m_ObjectHideFlags: 0
