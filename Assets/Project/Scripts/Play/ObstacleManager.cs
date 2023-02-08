@@ -7,6 +7,10 @@ public class ObstacleManager : MonoBehaviour
 {
     public MusicManager musicManager;
 
+    public GameObject bgEasy;
+    public GameObject bgMedium;
+    public GameObject bgHard;
+
     // Liste difficult� 1
     public List<GameObject> obstaclesEasy;
     public List<GameObject> obstaclesGarbagesEasy;
@@ -44,16 +48,19 @@ public class ObstacleManager : MonoBehaviour
         // D�finition de la liste d'obstacle en fonction de la difficult�
         if (musicManager.selectedMusic.difficulty == "Easy")
         {
+            bgEasy.SetActive(true);
             obstacles = obstaclesEasy;
             obstaclesGarbages = obstaclesGarbagesEasy;
         }
         else if (musicManager.selectedMusic.difficulty == "Medium")
         {
+            bgMedium.SetActive(true);
             obstacles = obstaclesMedium;
             obstaclesGarbages = obstaclesGarbagesMedium;
         }
         else
         {
+            bgHard.SetActive(true);
             obstacles = obstaclesHard;
             obstaclesGarbages = obstaclesGarbagesHard;
         }
