@@ -41,6 +41,9 @@ public class ObstacleManager : MonoBehaviour
     int dansCombienUnGarbage;
 
     public Boss boss;
+    public PatternBoss patternBoss;
+
+    public int attackChoice;
 
     // Start is called before the first frame update
     void Start()
@@ -93,7 +96,41 @@ public class ObstacleManager : MonoBehaviour
 
             if (boss.bossEnCours && pourcentage >= 0.6)
             {
-                boss.paternBossAttack();
+                attackChoice=Random.Range(1, 8);
+                Debug.Log(attackChoice);
+                switch (attackChoice)
+                {
+                    case 1:
+                        patternBoss.AttackDirect();
+                    break;
+
+                    case 2:
+                        patternBoss.AttackTopSimple();
+                    break;
+
+                    case 3:
+                        patternBoss.AttackMidSimple();
+                    break;
+
+                    case 4:
+                        patternBoss.AttackBotSimple();
+                    break;
+
+                    case 5:
+                        patternBoss.AttackDuoTopMid();
+                    break;
+
+                    case 6:
+                        patternBoss.AttackDuoTopBot();
+                    break;
+
+                    case 7:
+                        patternBoss.AttackDuoMidBot();
+                    break;
+
+                    default:
+                        break;
+                }
             }
         }
 
