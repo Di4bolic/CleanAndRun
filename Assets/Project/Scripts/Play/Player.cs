@@ -96,7 +96,7 @@ public class Player : MonoBehaviour
             cooldownSaut = false;
         }
 
-        if (Time.time > stunEnCours)
+        if (Time.time > stunEnCours && nbSaut==2)
         {
             //animator.ResetTrigger("");
             //animator.SetTrigger("Run");
@@ -163,6 +163,12 @@ public class Player : MonoBehaviour
             nbSaut = nbSaut - 1;
             m_Rigidbody.velocity = Vector3.zero;
             m_Rigidbody.AddForce(0, m_Thrust, 0, ForceMode.Impulse);
+            if (nbSaut==2){
+                this.GetComponent<Animator>().Play("playerJump1");
+            }
+            if (nbSaut==1){
+                this.GetComponent<Animator>().Play("playerJump2");
+            }
         }
     }
 }

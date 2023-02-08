@@ -86,7 +86,8 @@ public class Boss : MonoBehaviour
             vieBoss = 100;
             vieBossInitiale = 100;
             barreVieFill.fillAmount = 1f;
-            thierry.position = new Vector3(3, -4, 0);
+            //thierry.position = new Vector3(3, -4, 0);
+            GetComponent<Rigidbody>().AddForce(-20, 0, 0, ForceMode.Impulse);
             bossEnCours = true;
             munBoss = munBoss + player.NbDechetColl;
             barreVieFill2.SetActive(true);
@@ -98,7 +99,7 @@ public class Boss : MonoBehaviour
 
     public void HideBoss()
     {
-        thierry.position = new Vector3(11, 30, 0);
+        thierry.position = new Vector3(23, -3, 0);
         bossEnCours = true;
         barreVieFill2.SetActive(false);
         barreVieCadre.SetActive(false);
@@ -107,7 +108,8 @@ public class Boss : MonoBehaviour
 
     public void ViewBoss()
     {
-        thierry.position = new Vector3(3, -4, 0);
+        //thierry.position = new Vector3(3, -4, 0);
+        GetComponent<Rigidbody>().AddForce(-20, 0, 0, ForceMode.Impulse);
         barreVieFill2.SetActive(true);
         barreVieCadre.SetActive(true);
         barreVieFond.SetActive(true);
