@@ -147,7 +147,7 @@ public class Player : MonoBehaviour
         {
             Destroy(other.gameObject);
             // Gestion UI
-            munitionsScore = 0 ;
+            munitionsScore -= 3;
             munitions.text = munitionsScore.ToString();
 
         }

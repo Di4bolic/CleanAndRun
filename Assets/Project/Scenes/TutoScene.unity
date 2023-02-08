@@ -704,11 +704,15 @@ MonoBehaviour:
   ob1: {fileID: 4185229145242084297}
   ob2: {fileID: 348981085}
   ob3: {fileID: 352187209}
+  garbage1: {fileID: 696650232}
+  garbage2: {fileID: 484563047}
   textJump: {fileID: 790065404}
   textDoubleJump: {fileID: 647031497}
   textGarbage: {fileID: 1607139992}
   textShoot: {fileID: 618124025}
   boss: {fileID: 403499710}
+  player: {fileID: 1586408243}
+  finTuto: 0
 --- !u!4 &394718901
 Transform:
   m_ObjectHideFlags: 0
@@ -846,7 +850,7 @@ MonoBehaviour:
   attackPatern1: 0
   animator: {fileID: 403499712}
   NbBossTue: 0
-  damage: 5
+  damage: 100
   nbEncounter: 0
 --- !u!65 &403499711
 BoxCollider:
@@ -3454,6 +3458,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicManager: {fileID: 1546816447}
+  bgEasy: {fileID: 0}
+  bgMedium: {fileID: 0}
+  bgHard: {fileID: 0}
   obstaclesEasy:
   - {fileID: 2674666287120338045, guid: b58493b1e834acb41a20a2b78f771e02, type: 3}
   - {fileID: 2674666287120338045, guid: 46c6a5d6b3430104dbd09b95e82124af, type: 3}
