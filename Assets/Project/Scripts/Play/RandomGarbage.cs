@@ -24,4 +24,9 @@ public class RandomGarbage : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Instantiate(feedback, transform.position, Quaternion.identity);
+    }
 }
