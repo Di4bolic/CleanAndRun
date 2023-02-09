@@ -41,6 +41,11 @@ public class ObstacleManager : MonoBehaviour
     int dansCombienUnGarbage;
 
     public Boss boss;
+    public PatternBoss patternBoss;
+
+    public int attackChoice;
+
+    public int nbEncounter=0;
 
     // Start is called before the first frame update
     void Start()
@@ -85,15 +90,52 @@ public class ObstacleManager : MonoBehaviour
         }
         else
         {
+            //if (boss.transform.position.x<=4){
+              //  boss.GetComponent<Rigidbody>().velocity= new Vector3(0, 0, 0);
+                //Debug.Log("..............................................");
+            //}
 
             // Augmentation de pourcentage
             pourcentage += 1 / (musicManager.selectedMusic.lenght / maxChrono);
 
             chrono = maxChrono;
-
+//if (boss.bossEnCours && pourcentage >= 0.6)
             if (boss.bossEnCours && pourcentage >= 0.6)
             {
-                boss.paternBossAttack();
+                attackChoice=Random.Range(1, 8);
+                switch (attackChoice)
+                {
+                    case 1:
+                        patternBoss.AttackDirect();
+                    break;
+
+                    case 2:
+                        patternBoss.AttackTopSimple();
+                    break;
+
+                    case 3:
+                        patternBoss.AttackMidSimple();
+                    break;
+
+                    case 4:
+                        patternBoss.AttackBotSimple();
+                    break;
+
+                    case 5:
+                        patternBoss.AttackDuoTopMid();
+                    break;
+
+                    case 6:
+                        patternBoss.AttackDuoTopBot();
+                    break;
+
+                    case 7:
+                        patternBoss.AttackDuoMidBot();
+                    break;
+
+                    default:
+                        break;
+                }
             }
         }
 
@@ -119,40 +161,52 @@ public class ObstacleManager : MonoBehaviour
 
         if (musicManager.selectedMusic.difficulty == "Easy" || musicManager.selectedMusic.difficulty == "Medium")
         {
-            if (pourcentage >= 0.2 && boss.nbEncounter == 0)
+            if (pourcentage >= 0.2 && nbEncounter == 0)
             {
                 boss.SpawnBoss();
-                boss.nbEncounter++;
+                nbEncounter++;
                 StartCoroutine(CoroutineTempBoss());
             }
 
-            if (pourcentage >= 0.4 && boss.nbEncounter == 1)
+            if (pourcentage >= 0.4 && nbEncounter == 1)
             {
-                boss.ViewBoss();
-                boss.nbEncounter++;
+                if (boss.bossEnCours==false){
+                    boss.SpawnBoss();
+                }else{
+                    boss.ViewBoss();
+                }
+                nbEncounter++;
                 StartCoroutine(CoroutineTempBoss());
             }
         }
         else if (musicManager.selectedMusic.difficulty == "Hard")
         {
-            if (pourcentage >= 0.15 && boss.nbEncounter == 0)
+            if (pourcentage >= 0.15 && nbEncounter == 0)
             {
                 boss.SpawnBoss();
-                boss.nbEncounter++;
+                nbEncounter++;
                 StartCoroutine(CoroutineTempBoss());
             }
 
-            if (pourcentage >= 0.30 && boss.nbEncounter == 1)
+            if (pourcentage >= 0.30 && nbEncounter == 1)
             {
-                boss.ViewBoss();
-                boss.nbEncounter++;
+                if (boss.bossEnCours==false){
+                    boss.SpawnBoss();
+                }else{
+                    boss.ViewBoss();
+                }
+                nbEncounter++;
                 StartCoroutine(CoroutineTempBoss());
             }
 
-            if (pourcentage >= 0.45 && boss.nbEncounter == 2)
+            if (pourcentage >= 0.45 && nbEncounter == 2)
             {
-                boss.ViewBoss();
-                boss.nbEncounter++;
+                if (boss.bossEnCours==false){
+                    boss.SpawnBoss();
+                }else{
+                    boss.ViewBoss();
+                }
+                nbEncounter++;
                 StartCoroutine(CoroutineTempBoss());
             }
         }

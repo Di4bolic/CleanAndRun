@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tir : MonoBehaviour
+public class FeedbackCollect : MonoBehaviour
 {
+    private float chrono = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,10 @@ public class Tir : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        chrono += Time.deltaTime;
+        if (chrono >= 2f)
+        {
+            Destroy(gameObject);
+        }
     }
 }

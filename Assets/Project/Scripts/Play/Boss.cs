@@ -37,8 +37,6 @@ public class Boss : MonoBehaviour
 
     public int damage;
 
-    public int nbEncounter=0;
-
 
     // Start is called before the first frame update
     void Start()
@@ -89,6 +87,7 @@ public class Boss : MonoBehaviour
             vieBossInitiale = 100;
             barreVieFill.fillAmount = 1f;
             thierry.position = new Vector3(3, -4, 0);
+            //GetComponent<Rigidbody>().AddForce(-20, 0, 0, ForceMode.Impulse);
             bossEnCours = true;
             munBoss = munBoss + player.NbDechetColl;
             barreVieFill2.SetActive(true);
@@ -100,7 +99,7 @@ public class Boss : MonoBehaviour
 
     public void HideBoss()
     {
-        thierry.position = new Vector3(11, 30, 0);
+        thierry.position = new Vector3(23, -3, 0);
         bossEnCours = true;
         barreVieFill2.SetActive(false);
         barreVieCadre.SetActive(false);
@@ -110,6 +109,7 @@ public class Boss : MonoBehaviour
     public void ViewBoss()
     {
         thierry.position = new Vector3(3, -4, 0);
+        //GetComponent<Rigidbody>().AddForce(-20, 0, 0, ForceMode.Impulse);
         barreVieFill2.SetActive(true);
         barreVieCadre.SetActive(true);
         barreVieFond.SetActive(true);
@@ -119,7 +119,9 @@ public class Boss : MonoBehaviour
     public void paternBossAttack()
     {
         this.GetComponent<Animator>().Play("BossAttack");
-        var newTransform = new Vector3(thierry.position.x+1, player.transform.position.y + 1.3f, thierry.position.z);
+        float posProj = player.transform.position.y + 1.3f;
+        posProj = Mathf.Clamp(posProj, -2.8f, 3.8f);
+        var newTransform = new Vector3(transform.position.x, posProj, thierry.position.z);
         Instantiate(vomiBoss, newTransform, Quaternion.identity);
         animator.SetTrigger("finAttack");
     }
@@ -127,7 +129,9 @@ public class Boss : MonoBehaviour
     public void paternBossAttackEclair()
     {
         this.GetComponent<Animator>().Play("BossAttack");
-        var newTransform = new Vector3(thierry.position.x + 1, player.transform.position.y+1.3f, thierry.position.z);
+        float posProj = player.transform.position.y + 1.3f;
+        posProj = Mathf.Clamp(posProj, -2.8f, 3.8f);
+        var newTransform = new Vector3(transform.position.x, posProj, thierry.position.z);
         Instantiate(vomiBossEclair, newTransform, Quaternion.identity);
         animator.SetTrigger("finAttack");
     }
