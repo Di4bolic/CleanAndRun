@@ -15,6 +15,10 @@ public class FeedbackCollect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        chrono += Time.deltaTime;
+        if (chrono >= 2f)
+        {
+            Destroy(gameObject);
+        }
     }
 }
