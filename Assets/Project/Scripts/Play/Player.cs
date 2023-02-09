@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
     public Transform thierry;
     public Rigidbody m_Rigidbody;
     public float m_Thrust = 0.01f;
-    public ClicBoutColl clicBouton;
+    //public ClicBoutColl clicBouton;
     public bool stun=false;
     public float stunDelay = 1f;
     public float stunEnCours = -1f;
@@ -72,6 +72,8 @@ public class Player : MonoBehaviour
 
         m_Rigidbody = GetComponent<Rigidbody>();
         maxSpeed = 0.01f;
+
+        animator=GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -96,12 +98,12 @@ public class Player : MonoBehaviour
             cooldownSaut = false;
         }
 
-        if (Time.time > stunEnCours)
+        if (Time.time > stunEnCours && nbSaut==2)
         {
             //animator.ResetTrigger("");
             //animator.SetTrigger("Run");
             stun = false;
-            this.GetComponent<Animator>().Play("RunAnim");
+            //this.GetComponent<Animator>().Play("RunAnim");
             //m_Rigidbody.GetComponent<Renderer>().material.color = Color.white;
 
         }
@@ -111,6 +113,11 @@ public class Player : MonoBehaviour
         if(other.gameObject.CompareTag("Ground")) {
             m_Rigidbody.velocity = Vector3.zero;
             nbSaut = 2;
+
+            if (Time.time > stunEnCours)
+            {
+                animator.SetTrigger("Run");
+            }
         }
     }
 
@@ -125,7 +132,8 @@ public class Player : MonoBehaviour
 
             //m_Rigidbody.GetComponent<Renderer>().material.color = Color.red;
             //animator.SetTrigger("Stun");
-            this.GetComponent<Animator>().Play("playerStun");
+            //this.GetComponent<Animator>().Play("playerStun");
+            animator.SetTrigger("Stun");
         }
 
         if (other.gameObject.CompareTag("Collectible") && stun == false)
@@ -163,6 +171,14 @@ public class Player : MonoBehaviour
             nbSaut = nbSaut - 1;
             m_Rigidbody.velocity = Vector3.zero;
             m_Rigidbody.AddForce(0, m_Thrust, 0, ForceMode.Impulse);
+            if (nbSaut==2){
+                //this.GetComponent<Animator>().Play("playerJump1");
+                animator.SetTrigger("Jump1");
+            }
+            if (nbSaut==1){
+                animator.SetTrigger("Jump2");
+                //this.GetComponent<Animator>().Play("playerJump2");
+            }
         }
     }
 }

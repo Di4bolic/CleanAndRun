@@ -90,6 +90,10 @@ public class ObstacleManager : MonoBehaviour
         }
         else
         {
+            //if (boss.transform.position.x<=4){
+              //  boss.GetComponent<Rigidbody>().velocity= new Vector3(0, 0, 0);
+                //Debug.Log("..............................................");
+            //}
 
             // Augmentation de pourcentage
             pourcentage += 1 / (musicManager.selectedMusic.lenght / maxChrono);
