@@ -98,11 +98,12 @@ public class Player : MonoBehaviour
             cooldownSaut = false;
         }
 
-        if (Time.time > stunEnCours && nbSaut==2)
+        if (Time.time > stunEnCours)
         {
             //animator.ResetTrigger("");
             //animator.SetTrigger("Run");
             stun = false;
+            animator.SetTrigger("Run");
             //this.GetComponent<Animator>().Play("RunAnim");
             //m_Rigidbody.GetComponent<Renderer>().material.color = Color.white;
 
@@ -114,7 +115,7 @@ public class Player : MonoBehaviour
             m_Rigidbody.velocity = Vector3.zero;
             nbSaut = 2;
 
-            if (Time.time > stunEnCours)
+            if (stun==false)
             {
                 animator.SetTrigger("Run");
             }
@@ -171,11 +172,11 @@ public class Player : MonoBehaviour
             nbSaut = nbSaut - 1;
             m_Rigidbody.velocity = Vector3.zero;
             m_Rigidbody.AddForce(0, m_Thrust, 0, ForceMode.Impulse);
-            if (nbSaut==2){
+            if (nbSaut==1){
                 //this.GetComponent<Animator>().Play("playerJump1");
                 animator.SetTrigger("Jump1");
             }
-            if (nbSaut==1){
+            if (nbSaut==0){
                 animator.SetTrigger("Jump2");
                 //this.GetComponent<Animator>().Play("playerJump2");
             }

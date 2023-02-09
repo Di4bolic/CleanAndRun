@@ -102,39 +102,97 @@ public class ObstacleManager : MonoBehaviour
 //if (boss.bossEnCours && pourcentage >= 0.6)
             if (boss.bossEnCours && pourcentage >= 0.6)
             {
-                attackChoice=Random.Range(1, 8);
-                switch (attackChoice)
+
+                if (musicManager.selectedMusic.difficulty == "Easy")
                 {
-                    case 1:
-                        patternBoss.AttackDirect();
-                    break;
 
-                    case 2:
+                    attackChoice = Random.Range(1, 101);
+
+                    if(attackChoice <= 25)
+                    {
                         patternBoss.AttackTopSimple();
-                    break;
-
-                    case 3:
+                    }
+                    if (attackChoice > 25 && attackChoice <= 35)
+                    {
                         patternBoss.AttackMidSimple();
-                    break;
-
-                    case 4:
+                    }
+                    if (attackChoice > 35 && attackChoice <= 60)
+                    {
                         patternBoss.AttackBotSimple();
-                    break;
-
-                    case 5:
+                    }
+                    if (attackChoice > 60 && attackChoice <= 75)
+                    {
                         patternBoss.AttackDuoTopMid();
-                    break;
-
-                    case 6:
-                        patternBoss.AttackDuoTopBot();
-                    break;
-
-                    case 7:
+                    }
+                    if (attackChoice > 75 && attackChoice <= 90)
+                    {
                         patternBoss.AttackDuoMidBot();
-                    break;
+                    }
+                    if (attackChoice > 90)
+                    {
+                        patternBoss.AttackDuoTopBot();
+                    }
+                }
 
-                    default:
-                        break;
+                if (musicManager.selectedMusic.difficulty == "Medium")
+                {
+
+                    attackChoice = Random.Range(1, 101);
+
+                    if (attackChoice <= 18)
+                    {
+                        patternBoss.AttackTopSimple();
+                    }
+                    if (attackChoice > 18 && attackChoice <= 31)
+                    {
+                        patternBoss.AttackMidSimple();
+                    }
+                    if (attackChoice > 31 && attackChoice <= 49)
+                    {
+                        patternBoss.AttackBotSimple();
+                    }
+                    if (attackChoice > 49 && attackChoice <= 67)
+                    {
+                        patternBoss.AttackDuoTopMid();
+                    }
+                    if (attackChoice > 67 && attackChoice <= 85)
+                    {
+                        patternBoss.AttackDuoMidBot();
+                    }
+                    if (attackChoice > 85)
+                    {
+                        patternBoss.AttackDuoTopBot();
+                    }
+                }
+
+                if (musicManager.selectedMusic.difficulty == "Hard")
+                {
+                    attackChoice = Random.Range(1, 101);
+
+                    if (attackChoice <= 8)
+                    {
+                        patternBoss.AttackTopSimple();
+                    }
+                    if (attackChoice > 8 && attackChoice <= 22)
+                    {
+                        patternBoss.AttackMidSimple();
+                    }
+                    if (attackChoice > 22 && attackChoice <= 30)
+                    {
+                        patternBoss.AttackBotSimple();
+                    }
+                    if (attackChoice > 30 && attackChoice <= 55)
+                    {
+                        patternBoss.AttackDuoTopMid();
+                    }
+                    if (attackChoice > 55 && attackChoice <= 80)
+                    {
+                        patternBoss.AttackDuoMidBot();
+                    }
+                    if (attackChoice > 80)
+                    {
+                        patternBoss.AttackDuoTopBot();
+                    }
                 }
             }
         }
