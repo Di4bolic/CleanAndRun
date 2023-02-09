@@ -42,6 +42,7 @@ public class ObstacleManager : MonoBehaviour
 
     public Boss boss;
     public PatternBoss patternBoss;
+    public BossManager bossManager;
 
     public int attackChoice;
 
@@ -100,7 +101,7 @@ public class ObstacleManager : MonoBehaviour
 
             chrono = maxChrono;
 //if (boss.bossAlive && pourcentage >= 0.6)
-            if (boss.bossAlive && pourcentage >= 0.6)
+            if (bossManager.bossAlive && pourcentage >= 0.6)
             {
 
                 if (musicManager.selectedMusic.difficulty == "Easy")
@@ -206,31 +207,31 @@ public class ObstacleManager : MonoBehaviour
             SceneManager.LoadScene("EndScene");
         }
 
-        if (pourcentage >= 0.6 && boss.bossAlive==true)
+        if (pourcentage >= 0.6 && bossManager.bossAlive==true)
         {
-            boss.ViewBoss();
+            bossManager.ViewBoss();
         }
 
-        if (pourcentage >= 0.6 && boss.bossAlive == false)
+        if (pourcentage >= 0.6 && bossManager.bossAlive == false)
         {
-            boss.SpawnBoss();
+            bossManager.SpawnBoss();
         }
 
         if (musicManager.selectedMusic.difficulty == "Easy" || musicManager.selectedMusic.difficulty == "Medium")
         {
             if (pourcentage >= 0.2 && nbEncounter == 0)
             {
-                boss.SpawnBoss();
+                bossManager.SpawnBoss();
                 nbEncounter++;
                 StartCoroutine(CoroutineTempBoss());
             }
 
             if (pourcentage >= 0.4 && nbEncounter == 1)
             {
-                if (boss.bossAlive==false){
-                    boss.SpawnBoss();
+                if (bossManager.bossAlive==false){
+                    bossManager.SpawnBoss();
                 }else{
-                    boss.ViewBoss();
+                    bossManager.ViewBoss();
                 }
                 nbEncounter++;
                 StartCoroutine(CoroutineTempBoss());
@@ -240,17 +241,17 @@ public class ObstacleManager : MonoBehaviour
         {
             if (pourcentage >= 0.15 && nbEncounter == 0)
             {
-                boss.SpawnBoss();
+                bossManager.SpawnBoss();
                 nbEncounter++;
                 StartCoroutine(CoroutineTempBoss());
             }
 
             if (pourcentage >= 0.30 && nbEncounter == 1)
             {
-                if (boss.bossAlive==false){
-                    boss.SpawnBoss();
+                if (bossManager.bossAlive==false){
+                    bossManager.SpawnBoss();
                 }else{
-                    boss.ViewBoss();
+                    bossManager.ViewBoss();
                 }
                 nbEncounter++;
                 StartCoroutine(CoroutineTempBoss());
@@ -258,10 +259,10 @@ public class ObstacleManager : MonoBehaviour
 
             if (pourcentage >= 0.45 && nbEncounter == 2)
             {
-                if (boss.bossAlive==false){
-                    boss.SpawnBoss();
+                if (bossManager.bossAlive==false){
+                    bossManager.SpawnBoss();
                 }else{
-                    boss.ViewBoss();
+                    bossManager.ViewBoss();
                 }
                 nbEncounter++;
                 StartCoroutine(CoroutineTempBoss());
@@ -279,7 +280,7 @@ public class ObstacleManager : MonoBehaviour
         patternBoss.AttackDirectFast();
 
         yield return new WaitForSeconds(1);
-        boss.HideBoss();
+        bossManager.HideBoss();
     }
 
     void SpawnObstacle(float _decalage)
