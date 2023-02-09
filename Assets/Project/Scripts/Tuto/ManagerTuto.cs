@@ -38,11 +38,11 @@ public class ManagerTuto : MonoBehaviour
 
         if (player.stun==true && ob1.gameObject.transform.position.x <= 5 && ob1.gameObject.transform.position.x >= -12)
         {
-            ob1.transform.position = new Vector3(25, -7, 0);
-            ob2.transform.position = new Vector3(50, -3, 0);
-            ob3.transform.position = new Vector3(80, -1, 0);
-            garbage1.transform.position = new Vector3(80, -0, 0);
-            garbage2.transform.position = new Vector3(87, -0, 0);
+            ob1.transform.position += new Vector3(25, 0, 0);
+            ob2.transform.position += new Vector3(25, 0, 0);
+            ob3.transform.position += new Vector3(25, 0, 0);
+            garbage1.transform.position += new Vector3(25, 0, 0);
+            garbage2.transform.position += new Vector3(25, 0, 0);
         }
 
         if (ob2.gameObject.transform.position.x <= -10 && ob2.gameObject.transform.position.x >= -12)
@@ -53,17 +53,17 @@ public class ManagerTuto : MonoBehaviour
 
         if (player.stun == true && ob2.gameObject.transform.position.x <= 5)
         {
-            ob2.transform.position = new Vector3(25, -3, 0);
-            ob3.transform.position = new Vector3(65, -1, 0);
-            garbage1.transform.position = new Vector3(65, -0, 0);
-            garbage2.transform.position = new Vector3(67, -0, 0);
+            ob2.transform.position += new Vector3(25, 0, 0);
+            ob3.transform.position += new Vector3(25, 0, 0);
+            garbage1.transform.position += new Vector3(25, 0, 0);
+            garbage2.transform.position += new Vector3(25, 0, 0);
         }
 
         if (player.munitionsScore<=0 && ob3.gameObject.transform.position.x >= -20 && ob3.gameObject.transform.position.x <= -10 && endTuto == false)
         {
-            ob3.transform.position = new Vector3(25, -1, 0);
-            garbage1.transform.position = new Vector3(22, -0, 0);
-            garbage2.transform.position = new Vector3(29, -0, 0);
+            ob3.transform.position += new Vector3(25, 0, 0);
+            garbage1.transform.position += new Vector3(25, 0, 0);
+            garbage2.transform.position += new Vector3(25, 0, 0);
         }
 
         if (ob3.gameObject.transform.position.x <= -15 && player.munitionsScore >= 0 && endTuto == false)

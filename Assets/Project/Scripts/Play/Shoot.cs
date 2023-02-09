@@ -17,6 +17,5 @@ public class Shoot : MonoBehaviour
             player.munitionsScore--;
             player.munitions.text = player.munitionsScore.ToString();
         }
-    }
-    
+    }    
 }
