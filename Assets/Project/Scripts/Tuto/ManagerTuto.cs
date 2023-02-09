@@ -61,6 +61,7 @@ public class ManagerTuto : MonoBehaviour
 
         if (boss.vieBoss <= 0){
             finTuto = true;
+            Debug.Log("test");
         }
     }
 }
