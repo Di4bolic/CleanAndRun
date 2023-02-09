@@ -41,6 +41,7 @@ public class BossManager : MonoBehaviour
     public GameObject tentacleBoss;
 
     public GameObject currentBoss;
+    public string nameBossCurrent;
 
     void Start()
     {
@@ -50,10 +51,11 @@ public class BossManager : MonoBehaviour
 
     void Update()
     {
-        //gère les actions du boss
+        //gï¿½re les actions du boss
         if (lifeBossCurrent <= 0 && bossAlive == true)
         {
-            transformBossCurrent.position = new Vector3(11, 30, 0);
+            //transformBossCurrent.position = new Vector3(11, 30, 0);
+            currentBoss.SetActive(false);
             bossAlive = false;
             lifeBarFIll2.SetActive(false);
             lifeBarBorder.SetActive(false);
@@ -66,15 +68,10 @@ public class BossManager : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    public void UpdateLife()
     {
-        //interaction entre les projectile du joueur et le boss
-        if (other.gameObject.CompareTag("Projectil"))
-        {
-            lifeBossCurrent = lifeBossCurrent - currentBoss.GetComponent<Boss>().damage;
-            Destroy(other.gameObject);
-            lifeBarFIll.fillAmount = lifeBossCurrent / 100;
-        }
+        lifeBossCurrent = currentBoss.GetComponent<Boss>().lifeBoss;
+        lifeBarFIll.fillAmount = lifeBossCurrent / 100;
     }
 
 
@@ -82,24 +79,22 @@ public class BossManager : MonoBehaviour
     {
 
         spawnBossAlea = Random.Range(1, 3);
-        if (spawnBossAlea == 1)
+        if (spawnBossAlea == 0)
         {
             currentBoss = binBoss;
         }
         else
         {
             currentBoss = tentacleBoss;
-                //Instantiate(tentacleBoss, new Vector3(3, -4, 0), Quaternion.identity) as GameObject;
         }
         //initialise un boss avec ses stats propre
         if (Time.time >= respawnCurrent)
         {
+            nameBossCurrent = currentBoss.GetComponent<Boss>().name;
             lifeBossCurrent = currentBoss.GetComponent<Boss>().lifeBossInitial;
+            currentBoss.GetComponent<Boss>().lifeBoss=currentBoss.GetComponent<Boss>().lifeBossInitial;
             transformBossCurrent = currentBoss.GetComponent<Transform>();
-            //lifeBossCurrent = lifeBossCurrentInitial;
             lifeBarFIll.fillAmount = 1f;
-            //transformBossCurrent.position = new Vector3(3, -4, 0);
-            Debug.Log("ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
             currentBoss.SetActive(true);
             bossAlive = true;
             lifeBarFIll2.SetActive(true);
@@ -110,10 +105,9 @@ public class BossManager : MonoBehaviour
     }
 
     public void HideBoss()
-    //Place le boss en dehors de l'écran pour le cacher
+    //Place le boss en dehors de l'ï¿½cran pour le cacher
     {
         //transformBossCurrent.position = new Vector3(23, -3, 0);
-        bossAlive = true;
         lifeBarFIll2.SetActive(false);
         lifeBarBorder.SetActive(false);
         lifeBarBack.SetActive(false);
@@ -129,6 +123,6 @@ public class BossManager : MonoBehaviour
         lifeBarFIll2.SetActive(true);
         lifeBarBorder.SetActive(true);
         lifeBarBack.SetActive(true);
-        this.GetComponent<Animator>().Play("BossIdle");
+        //this.GetComponent<Animator>().Play("BossIdle");
     }
 }
