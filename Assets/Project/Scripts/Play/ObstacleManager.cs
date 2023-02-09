@@ -99,8 +99,8 @@ public class ObstacleManager : MonoBehaviour
             pourcentage += 1 / (musicManager.selectedMusic.lenght / maxChrono);
 
             chrono = maxChrono;
-//if (boss.bossEnCours && pourcentage >= 0.6)
-            if (boss.bossEnCours && pourcentage >= 0.6)
+//if (boss.bossAlive && pourcentage >= 0.6)
+            if (boss.bossAlive && pourcentage >= 0.6)
             {
 
                 if (musicManager.selectedMusic.difficulty == "Easy")
@@ -206,13 +206,12 @@ public class ObstacleManager : MonoBehaviour
             SceneManager.LoadScene("EndScene");
         }
 
-
-        if (pourcentage >= 0.6 && boss.bossEnCours==true)
+        if (pourcentage >= 0.6 && boss.bossAlive==true)
         {
             boss.ViewBoss();
         }
 
-        if (pourcentage >= 0.6 && boss.bossEnCours == false)
+        if (pourcentage >= 0.6 && boss.bossAlive == false)
         {
             boss.SpawnBoss();
         }
@@ -228,7 +227,7 @@ public class ObstacleManager : MonoBehaviour
 
             if (pourcentage >= 0.4 && nbEncounter == 1)
             {
-                if (boss.bossEnCours==false){
+                if (boss.bossAlive==false){
                     boss.SpawnBoss();
                 }else{
                     boss.ViewBoss();
@@ -248,7 +247,7 @@ public class ObstacleManager : MonoBehaviour
 
             if (pourcentage >= 0.30 && nbEncounter == 1)
             {
-                if (boss.bossEnCours==false){
+                if (boss.bossAlive==false){
                     boss.SpawnBoss();
                 }else{
                     boss.ViewBoss();
@@ -259,7 +258,7 @@ public class ObstacleManager : MonoBehaviour
 
             if (pourcentage >= 0.45 && nbEncounter == 2)
             {
-                if (boss.bossEnCours==false){
+                if (boss.bossAlive==false){
                     boss.SpawnBoss();
                 }else{
                     boss.ViewBoss();
@@ -274,10 +273,10 @@ public class ObstacleManager : MonoBehaviour
     public IEnumerator CoroutineTempBoss()
     {
         yield return new WaitForSeconds(2);
-        boss.paternBossAttackEclair();
+        patternBoss.AttackDirectFast();
 
         yield return new WaitForSeconds(2);
-        boss.paternBossAttackEclair();
+        patternBoss.AttackDirectFast();
 
         yield return new WaitForSeconds(1);
         boss.HideBoss();

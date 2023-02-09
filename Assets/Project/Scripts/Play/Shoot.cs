@@ -7,18 +7,9 @@ public class Shoot : MonoBehaviour
     public Player player;
 
     public GameObject projectil;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    public void Update()
-    {
-    }
-
-    public void tirJoueur(){
+    public void FirePlayer(){
+        //Le joueur crer un projectile qui part en arc de cercle et qui peut blesser le boss
         if (player.munitionsScore > 0 && player.stun==false)
         {
             var newTransform = transform.position + new Vector3(1.5f, 1.5f, 0);

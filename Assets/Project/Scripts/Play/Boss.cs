@@ -7,132 +7,117 @@ public class Boss : MonoBehaviour
 {
     public ManagerManager mM;
 
-    public Transform thierry;
+    public Transform transformBoss;
     public Player player;
-    public bool bossEnCours=false;
-    public bool stun = false;
-    public float stunDelay = 1f;
-    public float stunEnCours = -1f;
-    public float vieBoss;
-    public float vieBossInitiale;
-    public int munBoss = 0;
+    public bool bossAlive=false;
+    private bool stun = false;
+    private float stunDelay = 1f;
+    private float stunRunning = -1f;
+    public float lifeBoss;
+    public float lifeBossInitial;
+    //public int munBoss = 0;
 
-    public Image barreVieFill;
-    public GameObject barreVieFill2;
-    public GameObject barreVieCadre;
-    public GameObject barreVieFond;
-    public GameObject barreVieAffichage;
+    public Image lifeBarFIll;
+    public GameObject lifeBarFIll2;
+    public GameObject lifeBarBorder;
+    public GameObject lifeBarBack;
+    public GameObject lifeBarDisplay;
 
-    public GameObject vomiBoss;
-    public GameObject vomiBossEclair;
+    public GameObject sputumBoss;
+    public GameObject sputumBossFast;
 
     public ObstacleManager om;
-    public float respawnEnCours = -1f;
+    public float respawnCurrent = -1f;
     public float respawnDelay = 1f;
 
-    public bool attackPatern1 = false;
     public Animator animator;
 
-    public int NbBossTue=0;
+    public int NbBossKilled=0;
 
     public int damage;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         // Trouve le mM
         mM = FindObjectOfType<ManagerManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (vieBoss <= 0 && bossEnCours == true )
+        //gère les actions du boss
+        if (lifeBoss <= 0 && bossAlive == true )
         {
-            thierry.position = new Vector3(11, 30, 0);
-            bossEnCours =false;
-            barreVieFill2.SetActive(false);
-            barreVieCadre.SetActive(false);
-            barreVieFond.SetActive(false);
+            transformBoss.position = new Vector3(11, 30, 0);
+            bossAlive =false;
+            lifeBarFIll2.SetActive(false);
+            lifeBarBorder.SetActive(false);
+            lifeBarBack.SetActive(false);
 
-            respawnEnCours = Time.time + respawnDelay;
-            NbBossTue=NbBossTue+1;
-            mM.nbrBossKilled = NbBossTue;
-        }
-
-        if (bossEnCours == true)
-        {
-            attackPatern1 = true;
+            respawnCurrent = Time.time + respawnDelay;
+            NbBossKilled=NbBossKilled+1;
+            mM.nbrBossKilled = NbBossKilled;
         }
     }
 
 
     private void OnTriggerEnter(Collider other){
+        //interaction entre les projectile du joueur et le boss
         if (other.gameObject.CompareTag("Projectil"))
         {
-           vieBoss = vieBoss-damage;
+           lifeBoss = lifeBoss - damage;
            Destroy(other.gameObject);
-           barreVieFill.fillAmount = vieBoss / 100;
-           //barreVieFill.fillAmount - (damage * 100 / vieBossInitiale)/100;
+           lifeBarFIll.fillAmount = lifeBoss / 100;
         }
     }
 
 
     public void SpawnBoss()
     {
-        if(Time.time >= respawnEnCours)
+        //initialise un boss avec ses stats propre
+        if(Time.time >= respawnCurrent)
         {
-            vieBoss = 100;
-            vieBossInitiale = 100;
-            barreVieFill.fillAmount = 1f;
-            thierry.position = new Vector3(3, -4, 0);
+            lifeBoss = 100;
+            lifeBossInitial = 100;
+            lifeBarFIll.fillAmount = 1f;
+            transformBoss.position = new Vector3(3, -4, 0);
             //GetComponent<Rigidbody>().AddForce(-20, 0, 0, ForceMode.Impulse);
-            bossEnCours = true;
-            munBoss = munBoss + player.NbDechetColl;
-            barreVieFill2.SetActive(true);
-            barreVieCadre.SetActive(true);
-            barreVieFond.SetActive(true);
+            bossAlive = true;
+            lifeBarFIll2.SetActive(true);
+            lifeBarBorder.SetActive(true);
+            lifeBarBack.SetActive(true);
             this.GetComponent<Animator>().Play("BossIdle");
         }
     }
 
     public void HideBoss()
+    //Place le boss en dehors de l'écran pour le cacher
     {
-        thierry.position = new Vector3(23, -3, 0);
-        bossEnCours = true;
-        barreVieFill2.SetActive(false);
-        barreVieCadre.SetActive(false);
-        barreVieFond.SetActive(false);
+        transformBoss.position = new Vector3(23, -3, 0);
+        bossAlive = true;
+        lifeBarFIll2.SetActive(false);
+        lifeBarBorder.SetActive(false);
+        lifeBarBack.SetActive(false);
     }
 
     public void ViewBoss()
+    //Place le boss en face pour le rendre visible
     {
-        thierry.position = new Vector3(3, -4, 0);
+        transformBoss.position = new Vector3(3, -4, 0);
         //GetComponent<Rigidbody>().AddForce(-20, 0, 0, ForceMode.Impulse);
-        barreVieFill2.SetActive(true);
-        barreVieCadre.SetActive(true);
-        barreVieFond.SetActive(true);
+        lifeBarFIll2.SetActive(true);
+        lifeBarBorder.SetActive(true);
+        lifeBarBack.SetActive(true);
         this.GetComponent<Animator>().Play("BossIdle");
     }
 
-    public void paternBossAttack()
+    public void PaternBossAttackFast()
+     //Pattern dans lequel le boss tire un projectile rouge dans la direction du joueur en reprenant ses coordonnées
     {
         this.GetComponent<Animator>().Play("BossAttack");
         float posProj = player.transform.position.y + 1.3f;
         posProj = Mathf.Clamp(posProj, -2.8f, 3.8f);
-        var newTransform = new Vector3(transform.position.x, posProj, thierry.position.z);
-        Instantiate(vomiBoss, newTransform, Quaternion.identity);
-        animator.SetTrigger("finAttack");
-    }
-
-    public void paternBossAttackEclair()
-    {
-        this.GetComponent<Animator>().Play("BossAttack");
-        float posProj = player.transform.position.y + 1.3f;
-        posProj = Mathf.Clamp(posProj, -2.8f, 3.8f);
-        var newTransform = new Vector3(transform.position.x, posProj, thierry.position.z);
-        Instantiate(vomiBossEclair, newTransform, Quaternion.identity);
+        var newTransform = new Vector3(transform.position.x, posProj, transformBoss.position.z);
+        Instantiate(sputumBossFast, newTransform, Quaternion.identity);
         animator.SetTrigger("finAttack");
     }
 }

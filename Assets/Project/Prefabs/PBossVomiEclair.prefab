@@ -113,8 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3162811847752db4fb33e4f51c79f2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thierry: {fileID: 8200096028268934476}
-  m_Rigidbody: {fileID: -8210084158142820115}
+  transformSputum: {fileID: 8200096028268934476}
+  sputumRigidbody: {fileID: -8210084158142820115}
   m_Thrust: 15
   animator: {fileID: 2644490205520396356}
 --- !u!54 &-8210084158142820115

@@ -21,7 +21,6 @@ public class Player : MonoBehaviour
     // The initial position of the GameObject
     Vector3 initialPosition;
 
-
     // Manager Manager
     public ManagerManager mM;
 
@@ -31,25 +30,21 @@ public class Player : MonoBehaviour
     public int garbagesScore = 0;
     public int munitionsScore = 0;
 
-    bool cooldownSaut = false;
-    int nbSaut=2;
-    public Transform thierry;
-    public Rigidbody m_Rigidbody;
+    bool cooldownJump = false;
+    int nbJump=2;
+    public Transform transformPlayer;
+    public Rigidbody playerRigidbody;
     public float m_Thrust = 0.01f;
-    //public ClicBoutColl clicBouton;
     public bool stun=false;
     public float stunDelay = 1f;
-    public float stunEnCours = -1f;
-    public int NbDechetColl = 0;
+    public float stunCurrent = -1f;
     public float maxSpeed;
-
 
     public Animator animator;
 
-
     public SpriteRenderer spriteRenderer;
-    public Sprite newSpriteSaut1;
-    public Sprite newSpriteSaut2;
+    public Sprite newSpriteJump1;
+    public Sprite newSpriteJump2;
 
     void Awake()
     {
@@ -70,7 +65,7 @@ public class Player : MonoBehaviour
         // Trouve le mM
         mM = FindObjectOfType<ManagerManager>();
 
-        m_Rigidbody = GetComponent<Rigidbody>();
+        playerRigidbody = GetComponent<Rigidbody>();
         maxSpeed = 0.01f;
 
         animator=GetComponent<Animator>();
@@ -92,28 +87,28 @@ public class Player : MonoBehaviour
         }
 
 
-
-        if (Input.touchCount == 0 && cooldownSaut == true)
+        if (Input.touchCount == 0 && cooldownJump == true)
         {
-            cooldownSaut = false;
+            cooldownJump = false;
         }
 
-        if (Time.time > stunEnCours)
+        if (Time.time > stunCurrent)
         {
             //animator.ResetTrigger("");
             //animator.SetTrigger("Run");
             stun = false;
             animator.SetTrigger("Run");
             //this.GetComponent<Animator>().Play("RunAnim");
-            //m_Rigidbody.GetComponent<Renderer>().material.color = Color.white;
+            //playerRigidbody.GetComponent<Renderer>().material.color = Color.white;
 
         }
     }
 
     private void OnCollisionEnter(Collision other) {
+        //Detecte le sol et réagit
         if(other.gameObject.CompareTag("Ground")) {
-            m_Rigidbody.velocity = Vector3.zero;
-            nbSaut = 2;
+            playerRigidbody.velocity = Vector3.zero;
+            nbJump = 2;
 
             if (stun==false)
             {
@@ -125,13 +120,14 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //Detect les differents collision et interaction possible lié aux collisions
         if (other.gameObject.CompareTag("Obstacle"))
         {
             shakeDuration = 0.2f;
             stun = true;
-            stunEnCours = Time.time + stunDelay;
+            stunCurrent = Time.time + stunDelay;
 
-            //m_Rigidbody.GetComponent<Renderer>().material.color = Color.red;
+            //playerRigidbody.GetComponent<Renderer>().material.color = Color.red;
             //animator.SetTrigger("Stun");
             //this.GetComponent<Animator>().Play("playerStun");
             animator.SetTrigger("Stun");
@@ -140,7 +136,6 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("Collectible") && stun == false)
         {
             Destroy(other.gameObject);
-            NbDechetColl = NbDechetColl + 1;
 
             // Gestion UI
             garbagesScore++;
@@ -166,17 +161,18 @@ public class Player : MonoBehaviour
     }   
 
     public void JumpPlayer(){
-        if (cooldownSaut == false && nbSaut > 0 && Time.time > stunEnCours)
+        //Gere le saut du joueur et ses différents paramètres 
+        if (cooldownJump == false && nbJump > 0 && Time.time > stunCurrent)
         {
-            cooldownSaut = true;
-            nbSaut = nbSaut - 1;
-            m_Rigidbody.velocity = Vector3.zero;
-            m_Rigidbody.AddForce(0, m_Thrust, 0, ForceMode.Impulse);
-            if (nbSaut==1){
+            cooldownJump = true;
+            nbJump = nbJump - 1;
+            playerRigidbody.velocity = Vector3.zero;
+            playerRigidbody.AddForce(0, m_Thrust, 0, ForceMode.Impulse);
+            if (nbJump==1){
                 //this.GetComponent<Animator>().Play("playerJump1");
                 animator.SetTrigger("Jump1");
             }
-            if (nbSaut==0){
+            if (nbJump==0){
                 animator.SetTrigger("Jump2");
                 //this.GetComponent<Animator>().Play("playerJump2");
             }

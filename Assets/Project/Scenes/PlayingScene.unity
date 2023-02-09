@@ -1163,28 +1163,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mM: {fileID: 0}
-  thierry: {fileID: 403499709}
+  transformBoss: {fileID: 403499709}
   player: {fileID: 1586408243}
-  bossEnCours: 0
-  stun: 0
-  stunDelay: 20
-  stunEnCours: -1
-  vieBoss: 100
-  vieBossInitiale: 100
-  munBoss: 0
-  barreVieFill: {fileID: 692588884}
-  barreVieFill2: {fileID: 692588882}
-  barreVieCadre: {fileID: 1366713541}
-  barreVieFond: {fileID: 610232408}
-  barreVieAffichage: {fileID: 692588882}
-  vomiBoss: {fileID: 5786720125797268578, guid: cbcabdb8028db4d4087637cb55f608f3, type: 3}
-  vomiBossEclair: {fileID: 5786720125797268578, guid: b02bf3ef9cb14784a97d0ab67bd4cec7, type: 3}
+  bossAlive: 0
+  lifeBoss: 100
+  lifeBossInitial: 100
+  lifeBarFIll: {fileID: 692588884}
+  lifeBarFIll2: {fileID: 610232408}
+  lifeBarBorder: {fileID: 1366713541}
+  lifeBarBack: {fileID: 1657746903}
+  lifeBarDisplay: {fileID: 0}
+  sputumBoss: {fileID: 5786720125797268578, guid: cbcabdb8028db4d4087637cb55f608f3, type: 3}
+  sputumBossFast: {fileID: 5786720125797268578, guid: b02bf3ef9cb14784a97d0ab67bd4cec7, type: 3}
   om: {fileID: 1474454772}
-  respawnEnCours: -1
+  respawnCurrent: -1
   respawnDelay: 2
-  attackPatern1: 0
   animator: {fileID: 403499712}
-  NbBossTue: 0
+  NbBossKilled: 0
   damage: 10
 --- !u!65 &403499711
 BoxCollider:
@@ -1234,12 +1229,11 @@ MonoBehaviour:
   spawnBulletBossTop: {fileID: 1698852050}
   spawnBulletBossMid: {fileID: 1969834822}
   spawnBulletBossBottom: {fileID: 2113908785}
-  vomiBoss: {fileID: 5786720125797268578, guid: cbcabdb8028db4d4087637cb55f608f3, type: 3}
-  vomiBossEclair: {fileID: 5786720125797268578, guid: b02bf3ef9cb14784a97d0ab67bd4cec7, type: 3}
+  sputumBoss: {fileID: 5786720125797268578, guid: cbcabdb8028db4d4087637cb55f608f3, type: 3}
+  sputumBossFast: {fileID: 5786720125797268578, guid: b02bf3ef9cb14784a97d0ab67bd4cec7, type: 3}
   player: {fileID: 1586408243}
   boss: {fileID: 403499710}
   animator: {fileID: 403499712}
-  attackTypeBullet: 0
 --- !u!1 &417849445
 GameObject:
   m_ObjectHideFlags: 0
@@ -3531,7 +3525,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1586408248}
         m_TargetAssemblyTypeName: Shoot, Assembly-CSharp
-        m_MethodName: tirJoueur
+        m_MethodName: FirePlayer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6218,18 +6212,17 @@ MonoBehaviour:
   munitions: {fileID: 724937909}
   garbagesScore: 0
   munitionsScore: 0
-  thierry: {fileID: 1586408247}
-  m_Rigidbody: {fileID: 1586408244}
+  transformPlayer: {fileID: 1586408247}
+  playerRigidbody: {fileID: 1586408244}
   m_Thrust: 48
   stun: 0
   stunDelay: 1
-  stunEnCours: -1
-  NbDechetColl: 0
+  stunCurrent: -1
   maxSpeed: 0
   animator: {fileID: 1586408250}
   spriteRenderer: {fileID: 1586408246}
-  newSpriteSaut1: {fileID: -833266643, guid: b8b66a964c22d1f48b24df8fc8a85498, type: 3}
-  newSpriteSaut2: {fileID: -2115270490, guid: b8b66a964c22d1f48b24df8fc8a85498, type: 3}
+  newSpriteJump1: {fileID: 0}
+  newSpriteJump2: {fileID: 0}
 --- !u!54 &1586408244
 Rigidbody:
   m_ObjectHideFlags: 0
