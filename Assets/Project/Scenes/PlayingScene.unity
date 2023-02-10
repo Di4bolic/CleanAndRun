@@ -5505,6 +5505,8 @@ MonoBehaviour:
   - {fileID: 2674666287120338045, guid: 993639c7d2959654bbc799d8f1afdba8, type: 3}
   - {fileID: 2674666287120338045, guid: b41b030a102411d42b0779a5aebd436f, type: 3}
   - {fileID: 2674666287120338045, guid: b41b030a102411d42b0779a5aebd436f, type: 3}
+  obstacles: []
+  obstaclesGarbages: []
   spawnPoint: {fileID: 633614173}
   decalage: 0
   speed: 0
@@ -8756,7 +8758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4539300352392803046, guid: d9f5ab80e70274f45a11dc0329ecd53f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4539300352392803048, guid: d9f5ab80e70274f45a11dc0329ecd53f, type: 3}
       propertyPath: m_SortingOrder
@@ -8767,12 +8769,24 @@ PrefabInstance:
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4539300352392803049, guid: d9f5ab80e70274f45a11dc0329ecd53f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.53716975
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539300352392803049, guid: d9f5ab80e70274f45a11dc0329ecd53f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.53716975
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539300352392803049, guid: d9f5ab80e70274f45a11dc0329ecd53f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.53716975
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539300352392803049, guid: d9f5ab80e70274f45a11dc0329ecd53f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.52
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 4539300352392803049, guid: d9f5ab80e70274f45a11dc0329ecd53f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.03
+      value: -4.12
       objectReference: {fileID: 0}
     - target: {fileID: 4539300352392803049, guid: d9f5ab80e70274f45a11dc0329ecd53f, type: 3}
       propertyPath: m_LocalPosition.z
