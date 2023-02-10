@@ -78,8 +78,8 @@ public class BossManager : MonoBehaviour
     public void SpawnBoss()
     {
 
-        spawnBossAlea = Random.Range(1, 3);
-        if (spawnBossAlea == 0)
+        spawnBossAlea = Random.Range(1, 4);
+        if (spawnBossAlea <=2 )
         {
             currentBoss = binBoss;
         }

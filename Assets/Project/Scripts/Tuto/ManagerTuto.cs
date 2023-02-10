@@ -20,6 +20,7 @@ public class ManagerTuto : MonoBehaviour
 
     public BossManager bossManager;
     public Player player;
+    public Boss boss;
 
     public bool endTuto = false;
 
@@ -70,11 +71,12 @@ public class ManagerTuto : MonoBehaviour
         {
             textGarbage.gameObject.SetActive(false);
             textShoot.gameObject.SetActive(true);
-            bossManager.SpawnBoss();
+            boss.gameObject.SetActive(true);
             endTuto = true;
         }
 
-        if (bossManager.currentBoss.GetComponent<Boss>().lifeBoss <= 0){
+        if (boss.lifeBoss <= 0){
+            boss.gameObject.SetActive(false);
             textShoot.gameObject.SetActive(false);
             textGood.gameObject.SetActive(true);
         }
