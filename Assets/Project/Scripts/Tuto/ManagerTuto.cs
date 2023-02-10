@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class ManagerTuto : MonoBehaviour
@@ -23,6 +24,8 @@ public class ManagerTuto : MonoBehaviour
     public Boss boss;
 
     public bool endTuto = false;
+
+    private float chrono = 0f;
 
     void Start()
     {
@@ -79,6 +82,11 @@ public class ManagerTuto : MonoBehaviour
             boss.gameObject.SetActive(false);
             textShoot.gameObject.SetActive(false);
             textGood.gameObject.SetActive(true);
+            chrono += Time.time;
+            if (chrono >= 4000f)
+            {
+                SceneManager.LoadScene("MenuScene");
+            }
         }
     }
 }
