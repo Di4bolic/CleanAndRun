@@ -1731,10 +1731,10 @@ MonoBehaviour:
   bossAlive: 0
   lifeBossCurrent: 0
   lifeBossCurrentInitial: 0
-  lifeBarFIll: {fileID: 1657746905}
-  lifeBarFIll2: {fileID: 692588882}
+  lifeBarFIll: {fileID: 692588884}
+  lifeBarFIll2: {fileID: 610232408}
   lifeBarBorder: {fileID: 1366713541}
-  lifeBarBack: {fileID: 610232408}
+  lifeBarBack: {fileID: 1657746903}
   lifeBarDisplay: {fileID: 0}
   sputumBoss: {fileID: 0}
   sputumBossFast: {fileID: 0}
