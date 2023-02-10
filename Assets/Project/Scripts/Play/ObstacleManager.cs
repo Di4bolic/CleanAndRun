@@ -24,8 +24,9 @@ public class ObstacleManager : MonoBehaviour
     public List<GameObject> obstaclesGarbagesHard;
 
     // Les listes qui vont servir de conteneurs pour les listes de spawn al�atoire
-    List<GameObject> obstacles;
-    List<GameObject> obstaclesGarbages;
+    public List<GameObject> obstacles;
+    public List<GameObject> obstaclesGarbages;
+    private int actualObstacleNumber = 0;
 
     public GameObject spawnPoint;
     public float decalage = 0f;
@@ -54,20 +55,14 @@ public class ObstacleManager : MonoBehaviour
         if (musicManager.selectedMusic.difficulty == "Easy")
         {
             bgEasy.SetActive(true);
-            obstacles = obstaclesEasy;
-            obstaclesGarbages = obstaclesGarbagesEasy;
         }
         else if (musicManager.selectedMusic.difficulty == "Medium")
         {
             bgMedium.SetActive(true);
-            obstacles = obstaclesMedium;
-            obstaclesGarbages = obstaclesGarbagesMedium;
         }
         else
         {
             bgHard.SetActive(true);
-            obstacles = obstaclesHard;
-            obstaclesGarbages = obstaclesGarbagesHard;
         }
 
         // Chrono
@@ -284,31 +279,25 @@ public class ObstacleManager : MonoBehaviour
 
     void SpawnObstacle(float _decalage)
     {
+        ChooseObstacle();
+
         randomObstacle = Random.Range(0, obstacles.Count);
-        while (randomObstacle == randomObstacleSave)
-        {
-            randomObstacle = Random.Range(0, obstacles.Count);
-        }
-        randomObstacleSave = randomObstacle;
 
         Instantiate(obstacles[randomObstacle], spawnPoint.transform.position + new Vector3(_decalage, 0, 0), Quaternion.identity);
     }
 
     void SpawnObstacleGarbage(float _decalage)
-    {        
+    {
+        ChooseObstacle();
+
         randomObstacle = Random.Range(0, obstaclesGarbages.Count);
-        while (randomObstacle == randomObstacleSave)
-        {
-            randomObstacle = Random.Range(0, obstaclesGarbages.Count);
-        }
-        randomObstacleSave = randomObstacle;
 
         Instantiate(obstaclesGarbages[randomObstacle], spawnPoint.transform.position + new Vector3(_decalage, 0, 0), Quaternion.identity);
     }
 
     void SpawnAllLevel()
     {
-        for (int i = 0; i < (musicManager.lengthMusic/maxChrono); i++)
+        for (int i = 0; i < (musicManager.lengthMusic/maxChrono)/2; i++)
         {
             SpawnObstacle(decalage);
             // Décalage de la taille des obstacles
@@ -321,5 +310,54 @@ public class ObstacleManager : MonoBehaviour
             // Décalage de l'espace entre les obstacles
             decalage += 18f;
         }
+    }
+
+    private void ChooseObstacle()
+    {
+        actualObstacleNumber++;
+        obstacles.Clear();
+        obstaclesGarbages.Clear();
+
+        // D�finition de la liste d'obstacle en fonction de la difficult�
+        if (actualObstacleNumber <= (musicManager.lengthMusic / maxChrono) / 2)
+        {
+            if (musicManager.selectedMusic.difficulty == "Easy")
+            {
+                obstacles.AddRange(obstaclesEasy);
+                obstaclesGarbages.AddRange(obstaclesGarbagesEasy);
+            }
+            else if (musicManager.selectedMusic.difficulty == "Medium")
+            {
+                obstacles.AddRange(obstaclesMedium);
+                obstaclesGarbages.AddRange(obstaclesGarbagesMedium);
+                obstacles.AddRange(obstaclesEasy);
+                obstaclesGarbages.AddRange(obstaclesGarbagesEasy);
+            }
+            else
+            {
+                obstacles.AddRange(obstaclesHard);
+                obstaclesGarbages.AddRange(obstaclesGarbagesHard);
+                obstacles.AddRange(obstaclesMedium);
+                obstaclesGarbages.AddRange(obstaclesGarbagesMedium);
+            }
+        }
+        else
+        {
+            if (musicManager.selectedMusic.difficulty == "Easy")
+            {
+                obstacles.AddRange(obstaclesEasy);
+                obstaclesGarbages.AddRange(obstaclesGarbagesEasy);
+            }
+            else if (musicManager.selectedMusic.difficulty == "Medium")
+            {
+                obstacles.AddRange(obstaclesMedium);
+                obstaclesGarbages.AddRange(obstaclesGarbagesMedium);
+            }
+            else
+            {
+                obstacles.AddRange(obstaclesHard);
+                obstaclesGarbages.AddRange(obstaclesGarbagesHard);
+            }
+        }        
     }
 }
