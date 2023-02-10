@@ -18,41 +18,41 @@ public class PatternBoss : MonoBehaviour
     public Animator animator;
 
     public void AttackDirectFast()
-     //Attaque qui vise directement le joueur en recupérant sa position
+     //Attaque qui vise directement le joueur en recupï¿½rant sa position
     {
-        this.GetComponent<Animator>().Play("BossAttack");
+        //this.GetComponent<Animator>().Play("BossAttack");
         float posProj = player.transform.position.y + 1.3f;
         posProj = Mathf.Clamp(posProj, -2.8f, 3.8f);
         var newTransform = new Vector3(boss.transform.position.x+1, posProj, player.transform.position.z);
         Instantiate(sputumBossFast, newTransform, Quaternion.identity);
-        animator.SetTrigger("finAttack");
+        //animator.SetTrigger("finAttack");
     }
 
     public void AttackTopSimple()
     //Attaque qui fait apparaitre un projectile sur le spawner du haut
     {
-        this.GetComponent<Animator>().Play("BossAttack");
+        //this.GetComponent<Animator>().Play("BossAttack");
         var newTransform = spawnBulletBossTop.transform.position;
         Instantiate(sputumBoss, newTransform, Quaternion.identity);
-        animator.SetTrigger("finAttack");
+        //animator.SetTrigger("finAttack");
     }
 
     public void AttackMidSimple()
     //Attaque qui fait apparaitre un projectile sur le spawner du milieu
     {
-        this.GetComponent<Animator>().Play("BossAttack");
+        //this.GetComponent<Animator>().Play("BossAttack");
         var newTransform = spawnBulletBossMid.transform.position;
         Instantiate(sputumBoss, newTransform, Quaternion.identity);
-        animator.SetTrigger("finAttack");
+        //animator.SetTrigger("finAttack");
     }
 
     public void AttackBotSimple()
     //Attaque qui fait apparaitre un projectile sur le spawner du bas
     {
-        this.GetComponent<Animator>().Play("BossAttack");
+        //this.GetComponent<Animator>().Play("BossAttack");
         var newTransform = spawnBulletBossBottom.transform.position;
         Instantiate(sputumBoss, newTransform, Quaternion.identity);
-        animator.SetTrigger("finAttack");
+        //animator.SetTrigger("finAttack");
     }
 
     public void AttackDuoTopMid()
