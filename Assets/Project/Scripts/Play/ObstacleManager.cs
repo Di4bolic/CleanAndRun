@@ -102,7 +102,7 @@ public class ObstacleManager : MonoBehaviour
 
             chrono = maxChrono;
 //if (boss.bossAlive && pourcentage >= 0.6)
-            if (bossManager.bossAlive && pourcentage >= 0.2)
+            if (bossManager.bossAlive && pourcentage >= 0.6)
             {
                 if (bossManager.nameBossCurrent=="bin"){
             
@@ -198,20 +198,97 @@ public class ObstacleManager : MonoBehaviour
                         }
                     }
                 }else{
+                        if (musicManager.selectedMusic.difficulty == "Easy")
+                        {
+
                         attackChoice = Random.Range(1, 101);
 
-                        if (attackChoice <= 30)
+                        if(attackChoice <= 25)
                         {
-                            patternBossTentacle.AvionFall();
+                            patternBossTentacle.AttackTentacleTopSimple();
                         }
-                        if (attackChoice > 30 && attackChoice <= 70)
+                        if (attackChoice > 25 && attackChoice <= 35)
                         {
-                            patternBossTentacle.AvionAscending();
+                            patternBossTentacle.AttackTentacleMidSimple();
                         }
-                        if (attackChoice > 70 && attackChoice <= 90)
+                        if (attackChoice > 35 && attackChoice <= 60)
                         {
-                            patternBossTentacle.AvionDual();
+                            patternBossTentacle.AttackTentacleBotSimple();
                         }
+                        if (attackChoice > 60 && attackChoice <= 75)
+                        {
+                            patternBossTentacle.AttackTentacleDuoTopMid();
+                        }
+                        if (attackChoice > 75 && attackChoice <= 90)
+                        {
+                            patternBossTentacle.AttackTentacleDuoMidBot();
+                        }
+                        if (attackChoice > 90)
+                        {
+                            patternBossTentacle.AttackTentacleDuoTopBot();
+                        }
+                    }
+
+                    if (musicManager.selectedMusic.difficulty == "Medium")
+                    {
+
+                        attackChoice = Random.Range(1, 101);
+
+                        if (attackChoice <= 18)
+                        {
+                            patternBossTentacle.AttackTentacleTopSimple();
+                        }
+                        if (attackChoice > 18 && attackChoice <= 31)
+                        {
+                            patternBossTentacle.AttackTentacleMidSimple();
+                        }
+                        if (attackChoice > 31 && attackChoice <= 49)
+                        {
+                            patternBossTentacle.AttackTentacleBotSimple();
+                        }
+                        if (attackChoice > 49 && attackChoice <= 67)
+                        {
+                            patternBossTentacle.AttackTentacleDuoTopMid();
+                        }
+                        if (attackChoice > 67 && attackChoice <= 85)
+                        {
+                            patternBossTentacle.AttackTentacleDuoMidBot();
+                        }
+                        if (attackChoice > 85)
+                        {
+                            patternBossTentacle.AttackTentacleDuoTopBot();
+                        }
+                    }
+
+                    if (musicManager.selectedMusic.difficulty == "Hard")
+                    {
+                        attackChoice = Random.Range(1, 101);
+
+                        if (attackChoice <= 8)
+                        {
+                            patternBossTentacle.AttackTentacleTopSimple();
+                        }
+                        if (attackChoice > 8 && attackChoice <= 22)
+                        {
+                            patternBossTentacle.AttackTentacleMidSimple();
+                        }
+                        if (attackChoice > 22 && attackChoice <= 30)
+                        {
+                            patternBossTentacle.AttackTentacleBotSimple();
+                        }
+                        if (attackChoice > 30 && attackChoice <= 55)
+                        {
+                            patternBossTentacle.AttackTentacleDuoTopMid();
+                        }
+                        if (attackChoice > 55 && attackChoice <= 80)
+                        {
+                            patternBossTentacle.AttackTentacleDuoMidBot();
+                        }
+                        if (attackChoice > 80)
+                        {
+                            patternBossTentacle.AttackTentacleDuoTopBot();
+                        }
+                    }
                 }
             }
         }

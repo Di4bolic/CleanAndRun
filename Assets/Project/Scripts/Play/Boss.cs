@@ -10,9 +10,6 @@ public class Boss : MonoBehaviour
     public float lifeBoss;
     public float lifeBossInitial;
 
-    public GameObject sputumBoss;
-    public GameObject sputumBossFast;
-
     public Animator animator;
 
     public int damage;

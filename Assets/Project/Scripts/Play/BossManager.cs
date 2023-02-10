@@ -10,9 +10,6 @@ public class BossManager : MonoBehaviour
     public Transform transformBossCurrent;
     public Player player;
     public bool bossAlive = false;
-    private bool stun = false;
-    private float stunDelay = 1f;
-    private float stunRunning = -1f;
     public float lifeBossCurrent;
     public float lifeBossCurrentInitial;
 
@@ -70,8 +67,11 @@ public class BossManager : MonoBehaviour
 
     public void UpdateLife()
     {
+        Debug.Log("rererererererrerererrererrrrerrerererrerererrerererrererrere");
         lifeBossCurrent = currentBoss.GetComponent<Boss>().lifeBoss;
-        lifeBarFIll.fillAmount = lifeBossCurrent / 100;
+        Debug.Log(lifeBossCurrent);
+        lifeBarFIll.fillAmount = (lifeBossCurrent *100/lifeBossCurrentInitial)/100;
+        Debug.Log(lifeBossCurrent *100/lifeBossCurrentInitial/100);
     }
 
 
@@ -92,6 +92,7 @@ public class BossManager : MonoBehaviour
         {
             nameBossCurrent = currentBoss.GetComponent<Boss>().name;
             lifeBossCurrent = currentBoss.GetComponent<Boss>().lifeBossInitial;
+            lifeBossCurrentInitial = currentBoss.GetComponent<Boss>().lifeBossInitial;
             currentBoss.GetComponent<Boss>().lifeBoss=currentBoss.GetComponent<Boss>().lifeBossInitial;
             transformBossCurrent = currentBoss.GetComponent<Transform>();
             lifeBarFIll.fillAmount = 1f;

@@ -40,62 +40,67 @@ public class PatternBossTentacle : MonoBehaviour
         }
     }
 
-    public void AvionFall()
-     //Attaque qui vise directement le joueur en recup�rant sa position
-    {
+    public void AttackTentacleTopSimple(){
         var newTransform = spawnBulletBossTop.transform.position;
-        Instantiate(paperFall, newTransform, Quaternion.identity);
+        var typeOfProj = Random.Range(1, 4);
+        if(typeOfProj==1){
+            Instantiate(brokenGlass, newTransform, Quaternion.identity);
+        }
+        if(typeOfProj==2){
+            Instantiate(sodaBottle, newTransform, Quaternion.identity);
+        }
+        if(typeOfProj==3){
+            Instantiate(cigaret, newTransform, Quaternion.identity);
+        }
     }
-
-    public void AvionAscending()
-     //Attaque qui vise directement le joueur en recup�rant sa position
-    {
+        public void AttackTentacleMidSimple(){
+        var newTransform = spawnBulletBossMid.transform.position;
+        var typeOfProj = Random.Range(1, 4);
+        if(typeOfProj==1){
+            Instantiate(brokenGlass, newTransform, Quaternion.identity);
+        }
+        if(typeOfProj==2){
+            Instantiate(sodaBottle, newTransform, Quaternion.identity);
+        }
+        if(typeOfProj==3){
+            Instantiate(cigaret, newTransform, Quaternion.identity);
+        }
+    }
+        public void  AttackTentacleBotSimple(){
         var newTransform = spawnBulletBossBottom.transform.position;
-        Instantiate(paperAscending, newTransform, Quaternion.identity);
+        var typeOfProj = Random.Range(1, 4);
+        if(typeOfProj==1){
+            Instantiate(brokenGlass, newTransform, Quaternion.identity);
+        }
+        if(typeOfProj==2){
+            Instantiate(sodaBottle, newTransform, Quaternion.identity);
+        }
+        if(typeOfProj==3){
+            Instantiate(cigaret, newTransform, Quaternion.identity);
+        }
     }
 
-    public void AvionDual(){
-        AvionAscending();
-        AvionFall();
+    public void AttackTentacleDuoTopMid()
+    //Attaque qui fait apparaitre un projectile sur le spawner du haut et du milieu
+    {
+        AttackTentacleTopSimple();
+        //Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        AttackTentacleMidSimple();
     }
 
-    public void ProjTop(){
-        var newTransform = spawnBulletBossTop.transform.position;
-        var typeOfProj = Random.Range(1, 4);
-        if(typeOfProj==1){
-            Instantiate(brokenGlass, newTransform, Quaternion.identity);
-        }
-        if(typeOfProj==2){
-            Instantiate(sodaBottle, newTransform, Quaternion.identity);
-        }
-        if(typeOfProj==3){
-            Instantiate(cigaret, newTransform, Quaternion.identity);
-        }
+    public void AttackTentacleDuoTopBot()
+    //Attaque qui fait apparaitre un projectile sur le spawner du haut et du bas
+    {
+        AttackTentacleTopSimple();
+        //Debug.Log("???????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????");
+        AttackTentacleBotSimple();
     }
-        public void ProjMid(){
-        var newTransform = spawnBulletBossTop.transform.position;
-        var typeOfProj = Random.Range(1, 4);
-        if(typeOfProj==1){
-            Instantiate(brokenGlass, newTransform, Quaternion.identity);
-        }
-        if(typeOfProj==2){
-            Instantiate(sodaBottle, newTransform, Quaternion.identity);
-        }
-        if(typeOfProj==3){
-            Instantiate(cigaret, newTransform, Quaternion.identity);
-        }
-    }
-        public void ProjBot(){
-        var newTransform = spawnBulletBossTop.transform.position;
-        var typeOfProj = Random.Range(1, 4);
-        if(typeOfProj==1){
-            Instantiate(brokenGlass, newTransform, Quaternion.identity);
-        }
-        if(typeOfProj==2){
-            Instantiate(sodaBottle, newTransform, Quaternion.identity);
-        }
-        if(typeOfProj==3){
-            Instantiate(cigaret, newTransform, Quaternion.identity);
-        }
+
+    public void AttackTentacleDuoMidBot()
+    //Attaque qui fait apparaitre un projectile sur le spawner du milieu et du bas
+    {
+        AttackTentacleMidSimple();
+        //Debug.Log("............................................................................................................................");
+        AttackTentacleBotSimple();
     }
 }
